@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://drgobbojr.github.io/sitemap.xml
+
+Sitemap: https://drmarcelogobbo.com/sitemap.xml
