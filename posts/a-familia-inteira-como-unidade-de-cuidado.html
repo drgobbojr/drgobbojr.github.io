@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Libre+Bodoni:wght@500;600&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -157,6 +157,7 @@ header.site.nav-frost{background:rgba(245,246,248,.66);backdrop-filter:blur(16px
 .brand .tag{font-family:'Mulish',sans-serif;font-size:10.5px;color:rgba(42,55,69,.75);letter-spacing:.01em}
 .brand .tag b{font-family:'Mulish',sans-serif;font-style:italic;font-weight:700;font-size:10.5px}
 .author .foto{flex:0 0 56px;width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid #fff;outline:1px solid rgba(42,55,69,.16);box-shadow:0 4px 12px rgba(42,55,69,.18)}
+h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.roles h3{font-family:'Libre Bodoni',serif}
 @media(max-width:700px){.brand img.mark{height:29px}.brand img.lg{height:13px}}
 </style>
 <script>
@@ -189,7 +190,7 @@ header.site.nav-frost{background:rgba(245,246,248,.66);backdrop-filter:blur(16px
   }
   var heads=[];
   [].slice.call(document.querySelectorAll('h1,h2')).forEach(function(h){
-    if(h.closest('header')||h.closest('nav'))return;
+    if(document.querySelector('.related')||h.closest('header')||h.closest('nav')||h.closest('.cta'))return;
     if(h.getAttribute('data-v5'))return;
     h.setAttribute('data-v5','1');
     var spans=splitWords(h);
