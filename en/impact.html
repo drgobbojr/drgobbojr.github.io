@@ -27,13 +27,15 @@ body{background:#f5f6f8;color:#2a3745;font-family:'Mulish',sans-serif;font-size:
 a{color:#2a3745}
 .wrap{max-width:720px;margin:0 auto;padding:0 22px}
 header.site{background:#f5f6f8;border-bottom:1px solid rgba(42,55,69,.08);padding:18px 0}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;max-width:1100px}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1100px}
+header.site .wrap>span{flex-shrink:0}
+.brand{min-width:0}
 .brand{text-decoration:none;display:flex;flex-direction:column;gap:2px}
 .brand .name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;letter-spacing:.04em;text-transform:uppercase}
 .brand .tag{font-size:11px;color:#566a7a;letter-spacing:.02em}
 .brand .tag b{font-style:italic;font-family:'Cormorant Garamond',serif;font-size:12px}
 .hnav{display:flex;align-items:center;gap:14px}
-.back{font-size:13px;color:#566a7a;text-decoration:none;border:1px solid rgba(42,55,69,.15);border-radius:999px;padding:8px 16px}
+.back{font-size:13px;color:#566a7a;text-decoration:none;border:1px solid rgba(42,55,69,.15);border-radius:999px;padding:8px 16px;white-space:nowrap}
 .back:hover{background:#eef2f6}
 article{padding:56px 0 24px}
 .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#566a7a;margin-bottom:16px}
