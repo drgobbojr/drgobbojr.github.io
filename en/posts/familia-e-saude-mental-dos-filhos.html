@@ -241,5 +241,177 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
   if(nav){addEventListener('scroll',function(){nav.classList.toggle('nav-frost',scrollY>60)},{passive:true});}
 })();
 </script>
-<a href="https://wa.me/5511991929854" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;right:20px;bottom:20px;z-index:9999;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(175deg,#3b4c5f 0%,#2b3947 48%,#222e3a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 14px rgba(42,55,69,.42);text-decoration:none"><svg width="29" height="29" viewBox="0 0 24 24" fill="#f5f6f8"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></body>
+<a href="https://wa.me/5511991929854" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;right:20px;bottom:20px;z-index:9999;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(175deg,#3b4c5f 0%,#2b3947 48%,#222e3a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 14px rgba(42,55,69,.42);text-decoration:none"><svg width="29" height="29" viewBox="0 0 24 24" fill="#f5f6f8"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<style id="ofc-style">
+.ofc-backdrop{position:fixed;inset:0;background:rgba(30,40,52,.42);z-index:9998;opacity:0;transition:opacity .28s;backdrop-filter:blur(2px)}
+.ofc-backdrop.show{opacity:1}
+.ofc-card{position:fixed;z-index:9999;left:50%;top:50%;transform:translate(-50%,-46%);width:min(460px,92vw);background:#fff;border:1px solid #e9edf2;border-radius:18px;box-shadow:0 24px 60px rgba(42,55,69,.28);padding:30px 28px 26px;opacity:0;transition:opacity .3s,transform .3s;text-align:center}
+.ofc-card.show{opacity:1;transform:translate(-50%,-50%)}
+.ofc-x{position:absolute;top:12px;right:14px;width:30px;height:30px;border:none;background:transparent;color:#95a8b8;font-size:22px;line-height:1;cursor:pointer;border-radius:50%}
+.ofc-x:hover{background:#eef2f6;color:#2a3745}
+.ofc-eyebrow{font-family:'Mulish',sans-serif;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#95a8b8;margin:0 0 8px}
+.ofc-name{font-family:'Libre Bodoni','Cormorant Garamond',serif;color:#2a3745;font-weight:600;font-size:30px;margin:0 0 10px;line-height:1.1}
+.ofc-desc{font-family:'Mulish',sans-serif;font-size:14.5px;color:#566a7a;margin:0 0 18px}
+.ofc-form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.ofc-form input[type=email]{flex:1;min-width:180px;font-family:'Mulish';font-size:14.5px;color:#2a3745;background:#fbfcfd;border:1px solid #dce4ec;border-radius:999px;padding:12px 18px;outline:none}
+.ofc-form input[type=email]:focus{border-color:#95a8b8}
+.ofc-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Mulish',sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;padding:12px 22px;border-radius:999px;color:#f5f6f8;border:none;cursor:pointer;white-space:nowrap;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(175deg,#3b4c5f 0%,#2b3947 48%,#222e3a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(0,0,0,.28),0 2px 6px rgba(42,55,69,.28)}
+.ofc-btn[disabled]{opacity:.7;cursor:default}
+.ofc-btn .dot{width:6px;height:6px;border-radius:50%;background:#afc8de;box-shadow:0 0 6px rgba(175,200,222,.85);flex:0 0 auto}
+.ofc-fine{font-size:11.5px;color:#95a8b8;margin:14px 0 0}
+.ofc-fine a{color:#4e6c86}
+.ofc-msg{font-size:13.5px;margin:14px 0 0;line-height:1.55}
+.ofc-msg.ok{color:#2f6b45}
+.ofc-msg.err{color:#9a3b3b}
+.ofc-alt{font-size:12px;color:#95a8b8;margin:12px 0 0}
+.ofc-alt a{color:#4e6c86;cursor:pointer;text-decoration:underline}
+/* banner (post 1) */
+.ofc-banner{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);z-index:9997;width:min(620px,94vw);background:#fff;border:1px solid #e9edf2;border-radius:16px;box-shadow:0 16px 44px rgba(42,55,69,.22);padding:18px 20px;display:flex;gap:16px;align-items:center;opacity:0;transition:opacity .3s,transform .3s}
+.ofc-banner.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.ofc-banner .txt{flex:1;min-width:0}
+.ofc-banner .ofc-name{font-size:20px;margin:0 0 3px;text-align:left}
+.ofc-banner .ofc-eyebrow{text-align:left;margin:0 0 6px}
+.ofc-banner .ofc-desc{text-align:left;margin:0;font-size:13px}
+.ofc-banner .ofc-form{justify-content:flex-start;margin-top:10px}
+.ofc-banner .ofc-x{position:static;flex:0 0 auto;align-self:flex-start}
+@media(max-width:560px){.ofc-banner{flex-direction:column;align-items:stretch}.ofc-banner .ofc-x{position:absolute;top:8px;right:10px}}
+/* paywall (post 2+) */
+.ofc-locked{max-height:560px;overflow:hidden;position:relative}
+.ofc-fade{position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(180deg,rgba(245,246,248,0),#f5f6f8 78%);pointer-events:none;z-index:1}
+.ofc-wall{max-width:520px;margin:-40px auto 40px;position:relative;z-index:2;background:#fff;border:1px solid #e9edf2;border-radius:18px;box-shadow:0 20px 50px rgba(42,55,69,.16);padding:32px 28px 26px;text-align:center}
+</style>
+<script>
+(function(){
+  var G='https://o-fio-do-cuidado.ghost.io';
+  var SUB='ofc_sub', READ='ofc_read', POP='ofc_pop', BAN='ofc_ban';
+  function isSub(){try{return localStorage.getItem(SUB)==='1';}catch(e){return false;}}
+  function setSub(){try{localStorage.setItem(SUB,'1');}catch(e){}}
+  function readList(){try{return JSON.parse(sessionStorage.getItem(READ)||'[]');}catch(e){return [];}}
+  function pushRead(s){try{var a=readList();if(a.indexOf(s)<0){a.push(s);sessionStorage.setItem(READ,JSON.stringify(a));}}catch(e){}}
+  function ss(k,v){try{if(v===undefined)return sessionStorage.getItem(k);sessionStorage.setItem(k,v);}catch(e){return null;}}
+
+  function subscribe(email, btn, msg, onDone){
+    var orig=btn.innerHTML; btn.disabled=true; btn.innerHTML='Enviando…';
+    fetch(G+'/members/api/integrity-token/',{method:'GET'}).then(function(r){return r.text();}).then(function(tok){
+      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,emailType:'signup',labels:[],name:'',autoRedirect:true,integrityToken:tok})});
+    }).then(function(r){
+      if(r.ok){setSub();msg.className='ofc-msg ok';msg.textContent='Pronto! Enviei um e-mail de confirmação para '+email+'. Boa leitura.';onDone&&onDone();}
+      else{msg.className='ofc-msg err';msg.textContent='Não consegui agora. Tente de novo em instantes.';btn.disabled=false;btn.innerHTML=orig;}
+    }).catch(function(){msg.className='ofc-msg err';msg.textContent='Falha de conexão. Tente novamente.';btn.disabled=false;btn.innerHTML=orig;});
+  }
+  function validEmail(v){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);}
+
+  var LANG=(document.documentElement.lang||'pt').slice(0,2);
+  var T = LANG==='en' ? {
+    eyebrow:'The newsletter', name:'O fio do cuidado',
+    desc:'Every two weeks, a letter on mental and family health, told the way it sounds in the consulting room.',
+    btn:'Subscribe', ph:'Your best email',
+    fine:'No spam. One click to leave, anytime. <a href="/en/privacy.html">Privacy</a>.',
+    fill:'Enter a valid email.',
+    wallTitle:'Keep reading with O fio do cuidado',
+    wallDesc:'This is your second read today. Subscribe (it is free) to keep reading, and get the next letters.',
+    already:'I already subscribe'
+  } : {
+    eyebrow:'A newsletter', name:'O fio do cuidado',
+    desc:'A cada quinze dias, uma carta sobre saúde mental e da família, contada como no consultório.',
+    btn:'Quero receber', ph:'Seu melhor e-mail',
+    fine:'Sem spam. Um clique para sair quando quiser. <a href="/privacidade.html">Privacidade</a>.',
+    fill:'Digite um e-mail válido.',
+    wallTitle:'Continue lendo com O fio do cuidado',
+    wallDesc:'Este é o seu segundo texto na visita de hoje. Assine a newsletter (é grátis) para continuar lendo, e receba as próximas cartas.',
+    already:'Já sou assinante'
+  };
+
+  function formHTML(withAlt){
+    return '<div class="ofc-eyebrow">'+T.eyebrow+'</div>'+
+      '<div class="ofc-name">'+T.name+'</div>'+
+      '<p class="ofc-desc">'+T.desc+'</p>'+
+      '<form class="ofc-form"><input type="email" placeholder="'+T.ph+'" aria-label="'+T.ph+'" autocomplete="email"><button type="submit" class="ofc-btn"><span class="dot"></span>'+T.btn+'</button></form>'+
+      '<div class="ofc-msg"></div>'+
+      '<p class="ofc-fine">'+T.fine+'</p>'+
+      (withAlt?'<p class="ofc-alt"><a data-already>'+T.already+'</a></p>':'');
+  }
+  function wireForm(root, onOk){
+    var form=root.querySelector('.ofc-form'), msg=root.querySelector('.ofc-msg');
+    form.addEventListener('submit',function(e){e.preventDefault();
+      var inp=form.querySelector('input'), btn=form.querySelector('button'), v=(inp.value||'').trim();
+      if(!validEmail(v)){msg.className='ofc-msg err';msg.textContent=T.fill;return;}
+      subscribe(v,btn,msg,function(){setTimeout(onOk,1200);});
+    });
+    var alt=root.querySelector('[data-already]');
+    if(alt)alt.addEventListener('click',function(){setSub();onOk();});
+  }
+
+  // ---------- HOME POPUP ----------
+  function homePopup(){
+    if(isSub()||ss(POP)==='1')return;
+    var shown=false;
+    function trigger(){
+      if(shown)return;
+      var sc=window.scrollY||document.documentElement.scrollTop;
+      if(sc < Math.min(window.innerHeight*0.6, 640))return;
+      shown=true; window.removeEventListener('scroll',trigger);
+      var bd=document.createElement('div'); bd.className='ofc-backdrop';
+      var card=document.createElement('div'); card.className='ofc-card';
+      card.innerHTML='<button class="ofc-x" aria-label="Fechar">&times;</button>'+formHTML(false);
+      document.body.appendChild(bd); document.body.appendChild(card);
+      requestAnimationFrame(function(){bd.classList.add('show');card.classList.add('show');});
+      function close(){ss(POP,'1');bd.classList.remove('show');card.classList.remove('show');setTimeout(function(){bd.remove();card.remove();},320);}
+      card.querySelector('.ofc-x').addEventListener('click',close);
+      bd.addEventListener('click',close);
+      wireForm(card,function(){setTimeout(close,1400);});
+    }
+    window.addEventListener('scroll',trigger,{passive:true});
+  }
+
+  // ---------- POST METER ----------
+  function postMeter(){
+    var slug=location.pathname;
+    if(isSub()) return;                 // assinante lê tudo
+    var read=readList();
+    var seen=read.indexOf(slug)>=0;
+    if(seen || read.length===0){        // 1º texto (ou revisita): banner suave
+      pushRead(slug);
+      softBanner();
+    } else {                            // 2º+ texto novo: paywall
+      hardWall();
+    }
+  }
+  function softBanner(){
+    if(ss(BAN)==='1')return;
+    var shown=false;
+    function trigger(){
+      if(shown)return;
+      var doc=document.documentElement, sc=(window.scrollY||doc.scrollTop);
+      var pct=sc/((doc.scrollHeight-window.innerHeight)||1);
+      if(pct<0.5)return;
+      shown=true; window.removeEventListener('scroll',trigger);
+      var b=document.createElement('div'); b.className='ofc-banner';
+      b.innerHTML='<div class="txt"><div class="ofc-eyebrow">'+T.eyebrow+'</div><div class="ofc-name">'+T.name+'</div><p class="ofc-desc">'+T.desc+'</p><form class="ofc-form"><input type="email" placeholder="'+T.ph+'" autocomplete="email"><button type="submit" class="ofc-btn"><span class="dot"></span>'+T.btn+'</button></form><div class="ofc-msg"></div></div><button class="ofc-x" aria-label="Fechar">&times;</button>';
+      document.body.appendChild(b);
+      requestAnimationFrame(function(){b.classList.add('show');});
+      function close(){ss(BAN,'1');b.classList.remove('show');setTimeout(function(){b.remove();},320);}
+      b.querySelector('.ofc-x').addEventListener('click',close);
+      wireForm(b,function(){setTimeout(close,1500);});
+    }
+    window.addEventListener('scroll',trigger,{passive:true});
+  }
+  function hardWall(){
+    var art=document.querySelector('main')||document.querySelector('article');
+    if(!art)return;
+    art.classList.add('ofc-locked');
+    var fade=document.createElement('div'); fade.className='ofc-fade'; art.appendChild(fade);
+    var wall=document.createElement('div'); wall.className='ofc-wall';
+    wall.innerHTML='<div class="ofc-eyebrow">'+T.eyebrow+'</div><div class="ofc-name" style="font-size:26px">'+T.wallTitle+'</div><p class="ofc-desc">'+T.wallDesc+'</p><form class="ofc-form"><input type="email" placeholder="'+T.ph+'" autocomplete="email"><button type="submit" class="ofc-btn"><span class="dot"></span>'+T.btn+'</button></form><div class="ofc-msg"></div><p class="ofc-fine">'+T.fine+'</p><p class="ofc-alt"><a data-already>'+T.already+'</a></p>';
+    art.parentNode.insertBefore(wall, art.nextSibling);
+    function unlock(){art.classList.remove('ofc-locked');fade.remove();pushRead(location.pathname);wall.classList.add('done');setTimeout(function(){wall.remove();},400);}
+    wireForm(wall,unlock);
+  }
+
+  // expose for demo
+  window.OFC={home:homePopup, post:postMeter, _reset:function(){try{sessionStorage.removeItem(READ);sessionStorage.removeItem(POP);sessionStorage.removeItem(BAN);localStorage.removeItem(SUB);}catch(e){}}};
+})();
+</script>
+<script>try{OFC.post();}catch(e){}</script>
+</body>
 </html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>O fio do cuidado — a newsletter do Dr. Marcelo Gobbo Jr.</title>
+<meta name="description" content="A cada quinze dias, uma carta sobre saúde mental e da família. Ciência de verdade, contada como no consultório, para quem cuida de alguém e de si.">
+<link rel="canonical" href="https://drmarcelogobbo.com/newsletter.html">
+<link rel="alternate" hreflang="pt-br" href="https://drmarcelogobbo.com/newsletter.html">
+<link rel="alternate" hreflang="en" href="https://drmarcelogobbo.com/en/newsletter.html">
+<link rel="alternate" hreflang="x-default" href="https://drmarcelogobbo.com/newsletter.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="O fio do cuidado — a newsletter do Dr. Marcelo Gobbo Jr.">
+<meta property="og:description" content="A cada quinze dias, uma carta sobre saúde mental e da família. Ciência de verdade, contada como no consultório, para quem cuida de alguém e de si.">
+<meta property="og:url" content="https://drmarcelogobbo.com/newsletter.html">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Libre+Bodoni:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--dark:#2a3745;--body:#566a7a;--muted:#95a8b8;--link:#afc8de;--bg:#f5f6f8;--card:#fff;--line:#e9edf2;--soft:#eef2f6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--body);font-family:'Mulish',-apple-system,BlinkMacSystemFont,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 22px}
+  header.site{border-bottom:1px solid var(--line);background:rgba(255,255,255,.7);position:sticky;top:0;z-index:5;backdrop-filter:saturate(1.2) blur(6px)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .brand .mk{width:34px;height:34px;border-radius:50%;border:1.5px solid #c7d3de;display:flex;align-items:center;justify-content:center;color:#2a3745}
+  .brand b{font-family:'Libre Bodoni',serif;color:var(--dark);font-size:15px;letter-spacing:.02em;font-weight:600;display:block;line-height:1.1}
+  .brand span{font-size:10.5px;color:var(--muted)}
+  .brand .ac{font-style:italic;font-weight:700;color:#566a7a}
+  .langlink{font-size:13px;color:#566a7a;text-decoration:none;border:1px solid rgba(42,55,69,.2);border-radius:999px;padding:9px 18px}
+  .hero{text-align:center;padding:64px 0 8px}
+  .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+  h1{font-family:'Libre Bodoni',serif;color:var(--dark);font-weight:600;font-size:46px;line-height:1.08;margin:0 0 18px}
+  .lead{font-size:18px;color:var(--body);max-width:560px;margin:0 auto 30px}
+  .lead em{font-family:'Cormorant Garamond',serif;font-style:italic}
+  .form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 24px;max-width:520px;margin:0 auto;box-shadow:0 6px 24px rgba(42,55,69,.06)}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .row input[type=email]{flex:1;min-width:220px;font-family:'Mulish';font-size:15px;color:var(--dark);background:#fbfcfd;border:1px solid #dce4ec;border-radius:999px;padding:14px 20px;outline:none}
+  .row input[type=email]:focus{border-color:#95a8b8}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.02em;padding:14px 26px;border-radius:999px;color:#f5f6f8;border:none;cursor:pointer;text-decoration:none;white-space:nowrap;
+    background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(175deg,#3b4c5f 0%,#2b3947 48%,#222e3a 100%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(0,0,0,.28),0 2px 6px rgba(42,55,69,.28)}
+  .btn[disabled]{opacity:.7;cursor:default}
+  .btn .dot{width:6px;height:6px;border-radius:50%;background:#afc8de;box-shadow:0 0 6px rgba(175,200,222,.85);flex:0 0 auto}
+  .consent{display:flex;gap:9px;align-items:flex-start;margin:16px 2px 0;font-size:12.5px;color:var(--muted);text-align:left}
+  .consent input{margin-top:3px}
+  .consent a{color:#4e6c86}
+  .micro{font-size:12px;color:var(--muted);margin:14px 0 0}
+  .nlmsg{max-width:520px;margin:16px auto 0;font-size:14.5px;line-height:1.6;border-radius:12px;padding:0}
+  .nlmsg.ok{background:#eef5ef;border:1px solid #cfe4d4;color:#2f6b45;padding:16px 18px}
+  .nlmsg.err{background:#fbeeee;border:1px solid #edcfcf;color:#9a3b3b;padding:14px 16px}
+  section.blk{padding:46px 0;border-top:1px solid var(--line);margin-top:56px}
+  h2{font-family:'Libre Bodoni',serif;color:var(--dark);font-weight:600;font-size:24px;margin:0 0 22px;text-align:center}
+  .items{display:grid;gap:18px}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .item b{color:var(--dark);font-size:15.5px;display:block;margin-bottom:5px}
+  .item p{margin:0;font-size:14.5px}
+  .who{font-size:16px;color:var(--body);text-align:center;max-width:560px;margin:0 auto}
+  .author{display:flex;gap:16px;align-items:center;justify-content:center;margin:40px 0 0}
+  .author img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #fff;outline:1px solid rgba(42,55,69,.16);box-shadow:0 4px 12px rgba(42,55,69,.18)}
+  .author div{text-align:left}
+  .author b{color:var(--dark);font-size:15px}
+  .author p{margin:2px 0 0;font-size:13px;color:var(--muted)}
+  footer{text-align:center;padding:40px 0 60px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:56px}
+  footer a{color:#4e6c86;text-decoration:none}
+  @media(max-width:520px){h1{font-size:38px}}
+</style></head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/"><span class="mk">&#9677;</span><span><b>MARCELO GOBBO JR.</b><span><span class="ac">Artem Curant</span> &middot; Medicina de Família e Saúde Mental</span></span></a>
+  <a class="langlink" href="/en/newsletter.html">EN</a>
+</div></header>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="eyebrow">A newsletter</p>
+    <h1>O fio do cuidado</h1>
+    <p class="lead">A cada quinze dias, uma carta sobre saúde mental e da família. Ciência de verdade, contada <em>como no consultório</em>, para quem cuida de alguém e de si.</p>
+
+    <form class="form" id="nlform" novalidate>
+      <div class="row">
+        <input type="email" placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail" autocomplete="email" required>
+        <button class="btn" type="submit"><span class="dot"></span>Quero receber as cartas</button>
+      </div>
+      <label class="consent"><input type="checkbox" required> <span>Concordo em receber a newsletter e li a <a href="/privacidade.html">Política de Privacidade</a>. Posso sair quando quiser.</span></label>
+    </form>
+    <div class="nlmsg" id="nlmsg" role="status" aria-live="polite"></div>
+    <p class="micro">Sem spam. Um clique para sair, a qualquer momento.</p>
+  </div>
+
+  <section class="blk">
+    <h2>O que chega até você</h2>
+    <div class="items">
+      <div class="item"><b>Uma carta, não um informativo</b><p>Texto autoral, em primeira pessoa: uma cena de consultório e a evidência por trás dela, sem jargão e sem promessa milagrosa.</p></div>
+      <div class="item"><b>Quinzenal, no seu ritmo</b><p>Duas vezes por mês. O suficiente para manter o fio, sem lotar sua caixa de entrada.</p></div>
+      <div class="item"><b>Bônus só para quem assina</b><p>De vez em quando, um resumo em PDF ou um checklist prático, o extra que não vai para o blog aberto.</p></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2>Para quem é</h2>
+    <p class="who">Famílias atípicas, quem convive com um transtorno mental grave, e qualquer pessoa que cuida de outra e quer entender melhor o que sente e o que dá para fazer. Se você é dessas, puxe uma cadeira.</p>
+    <div class="author">
+      <img src="data:image/jpeg;base64,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" alt="Dr. Marcelo Gobbo Jr.">
+      <div><b>Dr. Marcelo Gobbo Jr.</b><p>Médico de Família e Comunidade · CRM-MG 74.511 · RQE 69038</p></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  Este conteúdo é informativo e não substitui consulta médica. Em urgências, 192 (SAMU) · Em crise emocional, 188 (CVV).<br>© 2026 Dr. Marcelo Gobbo Jr. · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a> · <a href="/cookies.html">Cookies</a>
+</footer>
+<script>
+(function(){
+  var G='https://o-fio-do-cuidado.ghost.io';
+  var form=document.getElementById('nlform');
+  if(!form)return;
+  var email=form.querySelector('input[type=email]');
+  var consent=form.querySelector('input[type=checkbox]');
+  var btn=form.querySelector('button');
+  var msg=document.getElementById('nlmsg');
+  var row=form.querySelector('.row');
+  var clab=form.querySelector('.consent');
+  function show(t,c){msg.textContent=t;msg.className='nlmsg '+c;}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    show('','');
+    var val=(email.value||'').trim();
+    var ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val);
+    if(!ok||!consent.checked){show("Preencha um e-mail válido e marque o consentimento.",'err');return;}
+    var orig=btn.innerHTML; btn.disabled=true; btn.innerHTML="Enviando…";
+    fetch(G+'/members/api/integrity-token/',{method:'GET'}).then(function(r){return r.text();}).then(function(token){
+      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:val,emailType:'signup',labels:[],name:'',autoRedirect:true,integrityToken:token})});
+    }).then(function(r){
+      if(r.ok){row.style.display='none';clab.style.display='none';show("Quase lá. Enviei um e-mail de confirmação para "+val+'.','ok');}
+      else{show("Não consegui concluir agora. Tente de novo em instantes.",'err');btn.disabled=false;btn.innerHTML=orig;}
+    }).catch(function(){show("Falha de conexão. Tente novamente.",'err');btn.disabled=false;btn.innerHTML=orig;});
+  });
+})();
+</script>
+</body></html>
