@@ -286,44 +286,56 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 <script>
 (function(){
   var G='https://fio.drmarcelogobbo.com';
-  var SUB='ofc_sub', READ='ofc_read', POP='ofc_pop', BAN='ofc_ban';
+  var SUB='ofc_sub2', READ='ofc_read2', POP='ofc_pop2', BAN='ofc_ban2', OK='ofc_ok2';
   function isSub(){try{return localStorage.getItem(SUB)==='1';}catch(e){return false;}}
   function setSub(){try{localStorage.setItem(SUB,'1');}catch(e){}}
   function readList(){try{return JSON.parse(sessionStorage.getItem(READ)||'[]');}catch(e){return [];}}
   function pushRead(s){try{var a=readList();if(a.indexOf(s)<0){a.push(s);sessionStorage.setItem(READ,JSON.stringify(a));}}catch(e){}}
   function ss(k,v){try{if(v===undefined)return sessionStorage.getItem(k);sessionStorage.setItem(k,v);}catch(e){return null;}}
-
-  function subscribe(email, btn, msg, onDone){
-    var orig=btn.innerHTML; btn.disabled=true; btn.innerHTML='Enviando…';
-    fetch(G+'/members/api/integrity-token/',{method:'GET'}).then(function(r){return r.text();}).then(function(tok){
-      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,emailType:'signup',labels:[],name:'',autoRedirect:true,integrityToken:tok})});
-    }).then(function(r){
-      if(r.ok){setSub();msg.className='ofc-msg ok';msg.textContent='Pronto! Enviei um e-mail de confirmação para '+email+'. Boa leitura.';onDone&&onDone();}
-      else{msg.className='ofc-msg err';msg.textContent='Não consegui agora. Tente de novo em instantes.';btn.disabled=false;btn.innerHTML=orig;}
-    }).catch(function(){msg.className='ofc-msg err';msg.textContent='Falha de conexão. Tente novamente.';btn.disabled=false;btn.innerHTML=orig;});
-  }
+  function okList(){try{return JSON.parse(sessionStorage.getItem(OK)||'[]');}catch(e){return [];}}
+  function pushOk(s){try{var a=okList();if(a.indexOf(s)<0){a.push(s);sessionStorage.setItem(OK,JSON.stringify(a));}}catch(e){}}
   function validEmail(v){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);}
 
   var LANG=(document.documentElement.lang||'pt').slice(0,2);
   var T = LANG==='en' ? {
-    eyebrow:'The newsletter', name:'O fio do cuidado',
+    eyebrow:'The newsletter', name:'Thread of Care',
     desc:'Every two weeks, a letter on mental and family health, told the way it sounds in the consulting room.',
-    btn:'Subscribe', ph:'Your best email',
+    btn:'Subscribe', ph:'Your best email', sending:'Sending…',
     fine:'No spam. One click to leave, anytime. <a href="/en/privacy.html">Privacy</a>.',
     fill:'Enter a valid email.',
-    wallTitle:'Keep reading with O fio do cuidado',
-    wallDesc:'This is your second read today. Subscribe (it is free) to keep reading, and get the next letters.',
-    already:'I already subscribe'
+    okSignup:'Done. I just emailed you a confirmation link, open it to activate your subscription. Enjoy the read.',
+    okSignin:'If that email is a subscriber, an access link is on its way. Open it to sign in on your devices.',
+    errRetry:'That did not go through. Please try again in a moment.',
+    errNet:'Connection failed. Please try again.',
+    wallTitle:'Keep reading with Thread of Care',
+    wallDesc:'This is your second read in this visit. Subscribe, it is free, to keep reading and get the next letters.',
+    already:'I already subscribe',
+    signinPh:'The email you subscribed with', signinBtn:'Send my access link',
+    signinHint:'Enter your subscriber email and I will send you an access link.'
   } : {
     eyebrow:'A newsletter', name:'O fio do cuidado',
     desc:'A cada quinze dias, uma carta sobre saúde mental e da família, contada como no consultório.',
-    btn:'Quero receber', ph:'Seu melhor e-mail',
+    btn:'Quero receber', ph:'Seu melhor e-mail', sending:'Enviando…',
     fine:'Sem spam. Um clique para sair quando quiser. <a href="/privacidade.html">Privacidade</a>.',
     fill:'Digite um e-mail válido.',
+    okSignup:'Pronto. Enviei um e-mail de confirmação, abra para ativar sua assinatura. Boa leitura.',
+    okSignin:'Se este e-mail for de assinante, um link de acesso está a caminho. Abra para entrar nos seus aparelhos.',
+    errRetry:'Não consegui agora. Tente de novo em instantes.',
+    errNet:'Falha de conexão. Tente novamente.',
     wallTitle:'Continue lendo com O fio do cuidado',
-    wallDesc:'Este é o seu segundo texto na visita de hoje. Assine a newsletter (é grátis) para continuar lendo, e receba as próximas cartas.',
-    already:'Já sou assinante'
+    wallDesc:'Este é o seu segundo texto nesta visita. Assine, é grátis, para continuar lendo e receber as próximas cartas.',
+    already:'Já sou assinante',
+    signinPh:'O e-mail que você assinou', signinBtn:'Enviar link de acesso',
+    signinHint:'Informe o e-mail da sua assinatura e envio um link de acesso.'
   };
+
+  function magic(email, mode, btn, msg, cb){
+    var orig=btn.innerHTML; btn.disabled=true; btn.innerHTML=T.sending;
+    fetch(G+'/members/api/integrity-token/',{method:'GET'}).then(function(r){return r.text();}).then(function(tok){
+      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,emailType:mode,labels:[],name:'',autoRedirect:true,integrityToken:tok})});
+    }).then(function(r){ cb(r.ok, orig, false); })
+      .catch(function(){ cb(false, orig, true); });
+  }
 
   function formHTML(withAlt){
     return '<div class="ofc-eyebrow">'+T.eyebrow+'</div>'+
@@ -334,15 +346,31 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
       '<p class="ofc-fine">'+T.fine+'</p>'+
       (withAlt?'<p class="ofc-alt"><a data-already>'+T.already+'</a></p>':'');
   }
-  function wireForm(root, onOk){
-    var form=root.querySelector('.ofc-form'), msg=root.querySelector('.ofc-msg');
+
+  // onOk(mode) fires only after a successful Ghost response.
+  function wireForm(root, onOk, allowSignin){
+    var form=root.querySelector('.ofc-form'), msg=root.querySelector('.ofc-msg'),
+        inp=form.querySelector('input'), btn=form.querySelector('button');
+    var mode='signup';
     form.addEventListener('submit',function(e){e.preventDefault();
-      var inp=form.querySelector('input'), btn=form.querySelector('button'), v=(inp.value||'').trim();
+      var v=(inp.value||'').trim();
       if(!validEmail(v)){msg.className='ofc-msg err';msg.textContent=T.fill;return;}
-      subscribe(v,btn,msg,function(){setTimeout(onOk,1200);});
+      magic(v, mode, btn, msg, function(ok, orig, neterr){
+        if(!ok){msg.className='ofc-msg err';msg.textContent=neterr?T.errNet:T.errRetry;btn.disabled=false;btn.innerHTML=orig;return;}
+        if(mode==='signup'){ setSub(); msg.className='ofc-msg ok'; msg.textContent=T.okSignup; if(onOk) setTimeout(function(){onOk('signup');},1300); }
+        else { msg.className='ofc-msg ok'; msg.textContent=T.okSignin; if(onOk) setTimeout(function(){onOk('signin');},1400); }
+      });
     });
-    var alt=root.querySelector('[data-already]');
-    if(alt)alt.addEventListener('click',function(){setSub();onOk();});
+    if(allowSignin){
+      var alt=root.querySelector('[data-already]');
+      if(alt)alt.addEventListener('click',function(){
+        mode='signin';
+        inp.placeholder=T.signinPh; inp.value=''; inp.focus();
+        btn.innerHTML='<span class="dot"></span>'+T.signinBtn;
+        msg.className='ofc-msg'; msg.textContent=T.signinHint;
+        if(alt.parentNode) alt.parentNode.style.display='none';
+      });
+    }
   }
 
   // ---------- HOME POPUP ----------
@@ -362,7 +390,7 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
       function close(){ss(POP,'1');bd.classList.remove('show');card.classList.remove('show');setTimeout(function(){bd.remove();card.remove();},320);}
       card.querySelector('.ofc-x').addEventListener('click',close);
       bd.addEventListener('click',close);
-      wireForm(card,function(){setTimeout(close,1400);});
+      wireForm(card,function(){setTimeout(close,1400);},false);
     }
     window.addEventListener('scroll',trigger,{passive:true});
   }
@@ -370,13 +398,14 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
   // ---------- POST METER ----------
   function postMeter(){
     var slug=location.pathname;
-    if(isSub()) return;                 // assinante lê tudo
+    if(isSub()) return;                 // assinante confirmado lê tudo
+    if(okList().indexOf(slug)>=0) return; // já liberado nesta sessão
     var read=readList();
     var seen=read.indexOf(slug)>=0;
-    if(seen || read.length===0){        // 1º texto (ou revisita): banner suave
+    if(seen || read.length===0){        // 1o texto (ou revisita): banner suave
       pushRead(slug);
       softBanner();
-    } else {                            // 2º+ texto novo: paywall
+    } else {                            // 2o+ texto novo: paywall
       hardWall();
     }
   }
@@ -395,7 +424,7 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
       requestAnimationFrame(function(){b.classList.add('show');});
       function close(){ss(BAN,'1');b.classList.remove('show');setTimeout(function(){b.remove();},320);}
       b.querySelector('.ofc-x').addEventListener('click',close);
-      wireForm(b,function(){setTimeout(close,1500);});
+      wireForm(b,function(){setTimeout(close,1500);},false);
     }
     window.addEventListener('scroll',trigger,{passive:true});
   }
@@ -407,12 +436,16 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
     var wall=document.createElement('div'); wall.className='ofc-wall';
     wall.innerHTML='<div class="ofc-eyebrow">'+T.eyebrow+'</div><div class="ofc-name" style="font-size:26px">'+T.wallTitle+'</div><p class="ofc-desc">'+T.wallDesc+'</p><form class="ofc-form"><input type="email" placeholder="'+T.ph+'" autocomplete="email"><button type="submit" class="ofc-btn"><span class="dot"></span>'+T.btn+'</button></form><div class="ofc-msg"></div><p class="ofc-fine">'+T.fine+'</p><p class="ofc-alt"><a data-already>'+T.already+'</a></p>';
     art.parentNode.insertBefore(wall, art.nextSibling);
-    function unlock(){art.classList.remove('ofc-locked');fade.remove();pushRead(location.pathname);wall.classList.add('done');setTimeout(function(){wall.remove();},400);}
-    wireForm(wall,unlock);
+    function unlock(mode){
+      art.classList.remove('ofc-locked'); fade.remove();
+      pushOk(location.pathname);
+      if(mode==='signup') pushRead(location.pathname);
+      wall.classList.add('done'); setTimeout(function(){wall.remove();},400);
+    }
+    wireForm(wall, unlock, true);
   }
 
-  // expose for demo
-  window.OFC={home:homePopup, post:postMeter, _reset:function(){try{sessionStorage.removeItem(READ);sessionStorage.removeItem(POP);sessionStorage.removeItem(BAN);localStorage.removeItem(SUB);}catch(e){}}};
+  window.OFC={home:homePopup, post:postMeter, _reset:function(){try{[READ,POP,BAN,OK].forEach(function(k){sessionStorage.removeItem(k);});localStorage.removeItem(SUB);}catch(e){}}};
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
