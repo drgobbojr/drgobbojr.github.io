@@ -291,6 +291,42 @@ a{color:inherit}a:hover{color:inherit}
         </div>
       </div>
     </div>
+        <!-- convite fixo da newsletter: conteúdo da página, sem gatilho, sempre visível -->
+
+    <style>
+      #ofc-inline{margin-top:26px;display:grid;grid-template-columns:1.02fr .98fr;gap:36px;align-items:center;background:#fff;border:1px solid rgba(42,55,69,.1);border-radius:10px;padding:30px 34px}
+      #ofc-inline .ofc-eyebrow{font-family:'Mulish',sans-serif;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#95a8b8;margin:0 0 8px}
+      #ofc-inline .ofc-name{font-family:'Libre Bodoni','Cormorant Garamond',serif;color:#2a3745;font-weight:600;font-size:27px;line-height:1.12;margin:0 0 10px}
+      #ofc-inline .ofc-desc{font-family:'Mulish',sans-serif;font-size:14.5px;line-height:1.6;color:#566a7a;margin:0}
+      #ofc-inline .ofc-form{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start;margin:0}
+      #ofc-inline .ofc-form input[type=email]{flex:1;min-width:190px;box-sizing:border-box;font-family:'Mulish',sans-serif;font-size:14.5px;color:#2a3745;background:#fbfcfd;border:1px solid #dce4ec;border-radius:999px;padding:12px 18px;outline:none}
+      #ofc-inline .ofc-form input[type=email]:focus{border-color:#95a8b8}
+      #ofc-inline .ofc-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Mulish',sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;padding:12px 22px;border-radius:999px;color:#f5f6f8;border:none;cursor:pointer;white-space:nowrap;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(175deg,#3b4c5f 0%,#2b3947 48%,#222e3a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(0,0,0,.28),0 2px 6px rgba(42,55,69,.28)}
+      #ofc-inline .ofc-btn[disabled]{opacity:.7;cursor:default}
+      #ofc-inline .ofc-btn .dot{width:6px;height:6px;border-radius:50%;background:#afc8de;box-shadow:0 0 6px rgba(175,200,222,.85);flex:0 0 auto}
+      #ofc-inline .ofc-fine{font-family:'Mulish',sans-serif;font-size:11.5px;line-height:1.5;color:#95a8b8;margin:12px 0 0}
+      #ofc-inline .ofc-fine a{color:#4e6c86}
+      #ofc-inline .ofc-msg{font-family:'Mulish',sans-serif;font-size:13.5px;line-height:1.55;margin:12px 0 0}
+      #ofc-inline .ofc-msg.ok{color:#2f6b45}
+      #ofc-inline .ofc-msg.err{color:#9a3b3b}
+      @media(max-width:860px){#ofc-inline{grid-template-columns:1fr;gap:20px;padding:26px 24px}}
+      @media(max-width:560px){#ofc-inline{padding:24px 20px;text-align:left}#ofc-inline .ofc-name{font-size:24px}#ofc-inline .ofc-form{display:block}#ofc-inline .ofc-form input[type=email]{width:100%;min-width:0;display:block}#ofc-inline .ofc-btn{width:100%;justify-content:center;margin-top:8px}}
+    </style>
+    <div id="ofc-inline">
+      <div>
+        <div class="ofc-eyebrow">The newsletter</div>
+        <div class="ofc-name">The thread starts here</div>
+        <p class="ofc-desc">This is where the reading begins. Subscribe, it is free, and every two weeks a letter arrives with a story from the consulting room and what the science has to say about it.</p>
+      </div>
+      <div data-ofc-slot>
+        <form class="ofc-form" action="https://fio.drmarcelogobbo.com/#/portal/signup" method="get" target="_blank" rel="noopener">
+          <input type="email" placeholder="Your best email" aria-label="Your best email" autocomplete="email" required>
+          <button type="submit" class="ofc-btn"><span class="dot"></span>Subscribe</button>
+        </form>
+        <div class="ofc-msg"></div>
+        <p class="ofc-fine">No spam. One click to leave, anytime. <a href="/en/privacy.html">Privacy</a>.</p>
+      </div>
+    </div>
     <div style="text-align:center;margin-top:30px"><a href="/en/blog.html" target="_blank" rel="noopener" style="display:inline-block;font-family:'Mulish',sans-serif;font-size:13px;letter-spacing:.06em;color:#566a7a;text-decoration:none;border:1px solid rgba(42,55,69,.2);border-radius:999px;padding:11px 26px">See all essays →</a></div>
   </div>
 
@@ -634,7 +670,8 @@ body{font-family:'Mulish',sans-serif}
     fill:'Enter a valid email.',
     wallTitle:'Keep reading with Thread of Care',
     wallDesc:'This is your second read today. Subscribe (it is free) to keep reading, and get the next letters.',
-    already:'I already subscribe'
+    already:'I already subscribe',
+    thanks:'You already receive the letters. The next one arrives in two weeks.'
   } : {
     eyebrow:'A newsletter', name:'Thread of Care',
     desc:'A cada quinze dias, uma carta sobre saúde mental e da família, contada como no consultório.',
@@ -796,9 +833,25 @@ body{font-family:'Mulish',sans-serif}
     wireForm(wall,unlock);
   }
 
+  // ---------- CONVITE FIXO NA DOBRA DO BLOG ----------
+  // Este não tem gatilho: ele já está no HTML, o crawler lê e o visitante vê
+  // sempre. O JavaScript aqui só troca o envio pelo mesmo caminho do Ghost que
+  // o resto da página usa, para o e-mail sair sem sair do site. Sem JavaScript,
+  // o formulário cai no Portal de assinatura, que faz a mesma coisa.
+  function inlineInvite(){
+    var root=document.getElementById('ofc-inline');
+    if(!root)return;
+    var slot=root.querySelector('[data-ofc-slot]');
+    if(isSub()){ if(slot)slot.innerHTML='<div class="ofc-msg ok">'+T.thanks+'</div>'; return; }
+    var form=root.querySelector('.ofc-form');
+    if(!form)return;
+    form.removeAttribute('action'); form.removeAttribute('target'); form.removeAttribute('method');
+    wireForm(root, function(){});
+  }
+
   // expose for demo
-  window.OFC={home:homePopup, post:postMeter, _reset:function(){try{sessionStorage.removeItem(READ);sessionStorage.removeItem(POP);sessionStorage.removeItem(BAN);localStorage.removeItem(SUB);}catch(e){}}};
+  window.OFC={home:homePopup, post:postMeter, blog:inlineInvite, _reset:function(){try{sessionStorage.removeItem(READ);sessionStorage.removeItem(POP);sessionStorage.removeItem(BAN);localStorage.removeItem(SUB);}catch(e){}}};
 })();
 </script>
-<script>(function(){var CSS="\n.ofc-backdrop{position:fixed;inset:0;background:rgba(30,40,52,.42);z-index:9998;opacity:0;transition:opacity .28s;backdrop-filter:blur(2px)}\n.ofc-backdrop.show{opacity:1}\n.ofc-card{position:fixed;z-index:9999;left:50%;top:50%;transform:translate(-50%,-46%);width:min(460px,92vw);background:#fff;border:1px solid #e9edf2;border-radius:18px;box-shadow:0 24px 60px rgba(42,55,69,.28);padding:30px 28px 26px;opacity:0;transition:opacity .3s,transform .3s;text-align:center}\n.ofc-card.show{opacity:1;transform:translate(-50%,-50%)}\n.ofc-x{position:absolute;top:12px;right:14px;width:30px;height:30px;border:none;background:transparent;color:#95a8b8;font-size:22px;line-height:1;cursor:pointer;border-radius:50%}\n.ofc-x:hover{background:#eef2f6;color:#2a3745}\n.ofc-eyebrow{font-family:'Mulish',sans-serif;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#95a8b8;margin:0 0 8px}\n.ofc-name{font-family:'Libre Bodoni','Cormorant Garamond',serif;color:#2a3745;font-weight:600;font-size:30px;margin:0 0 10px;line-height:1.1}\n.ofc-desc{font-family:'Mulish',sans-serif;font-size:14.5px;color:#566a7a;margin:0 0 18px}\n.ofc-form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}\n.ofc-form input[type=email]{flex:1;min-width:180px;font-family:'Mulish';font-size:14.5px;color:#2a3745;background:#fbfcfd;border:1px solid #dce4ec;border-radius:999px;padding:12px 18px;outline:none}\n.ofc-form input[type=email]:focus{border-color:#95a8b8}\n.ofc-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Mulish',sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;padding:12px 22px;border-radius:999px;color:#f5f6f8;border:none;cursor:pointer;white-space:nowrap;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(175deg,#3b4c5f 0%,#2b3947 48%,#222e3a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(0,0,0,.28),0 2px 6px rgba(42,55,69,.28)}\n.ofc-btn[disabled]{opacity:.7;cursor:default}\n.ofc-btn .dot{width:6px;height:6px;border-radius:50%;background:#afc8de;box-shadow:0 0 6px rgba(175,200,222,.85);flex:0 0 auto}\n.ofc-fine{font-size:11.5px;color:#95a8b8;margin:14px 0 0}\n.ofc-fine a{color:#4e6c86}\n.ofc-msg{font-size:13.5px;margin:14px 0 0;line-height:1.55}\n.ofc-msg.ok{color:#2f6b45}\n.ofc-msg.err{color:#9a3b3b}\n.ofc-alt{font-size:12px;color:#95a8b8;margin:12px 0 0}\n.ofc-alt a{color:#4e6c86;cursor:pointer;text-decoration:underline}\n\n/* convite da home: rodape flutuante, nunca interstitial */\n.ofc-banner.ofc-invite{max-height:40vh;overflow:auto}\n.ofc-banner.ofc-invite .ofc-fine{margin:10px 0 0;text-align:left}\n@media(max-width:560px){.ofc-banner.ofc-invite{left:0;right:0;bottom:0;width:auto;max-width:none;max-height:34vh;border-radius:16px 16px 0 0;padding:16px 18px 20px;transform:translateY(26px);box-shadow:0 -10px 34px rgba(42,55,69,.2)}.ofc-banner.ofc-invite.show{transform:translateY(0)}}\n/* banner (post 1) */\n.ofc-banner{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);z-index:9997;width:min(620px,94vw);background:#fff;border:1px solid #e9edf2;border-radius:16px;box-shadow:0 16px 44px rgba(42,55,69,.22);padding:18px 20px;display:flex;gap:16px;align-items:center;opacity:0;transition:opacity .3s,transform .3s}\n.ofc-banner.show{opacity:1;transform:translateX(-50%) translateY(0)}\n.ofc-banner .txt{flex:1;min-width:0}\n.ofc-banner .ofc-name{font-size:20px;margin:0 0 3px;text-align:left}\n.ofc-banner .ofc-eyebrow{text-align:left;margin:0 0 6px}\n.ofc-banner .ofc-desc{text-align:left;margin:0;font-size:13px}\n.ofc-banner .ofc-form{justify-content:flex-start;margin-top:10px}\n.ofc-banner .ofc-x{position:static;flex:0 0 auto;align-self:flex-start}\n@media(max-width:560px){.ofc-banner{flex-direction:column;align-items:stretch}.ofc-banner .ofc-x{position:absolute;top:8px;right:10px}}\n/* paywall (post 2+) */\n.ofc-locked{max-height:560px;overflow:hidden;position:relative}\n.ofc-fade{position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(180deg,rgba(245,246,248,0),#f5f6f8 78%);pointer-events:none;z-index:1}\n.ofc-wall{max-width:520px;margin:-40px auto 40px;position:relative;z-index:2;background:#fff;border:1px solid #e9edf2;border-radius:18px;box-shadow:0 20px 50px rgba(42,55,69,.16);padding:32px 28px 26px;text-align:center}\n";function ensure(){if(!document.getElementById("ofc-style")){var s=document.createElement("style");s.id="ofc-style";s.textContent=CSS;(document.head||document.documentElement).appendChild(s);}}ensure();window.addEventListener("scroll",ensure,{passive:true});var n=0,iv=setInterval(function(){ensure();if(++n>40)clearInterval(iv);},500);try{OFC.home();}catch(e){}})();</script>
+<script>(function(){var CSS="\n.ofc-backdrop{position:fixed;inset:0;background:rgba(30,40,52,.42);z-index:9998;opacity:0;transition:opacity .28s;backdrop-filter:blur(2px)}\n.ofc-backdrop.show{opacity:1}\n.ofc-card{position:fixed;z-index:9999;left:50%;top:50%;transform:translate(-50%,-46%);width:min(460px,92vw);background:#fff;border:1px solid #e9edf2;border-radius:18px;box-shadow:0 24px 60px rgba(42,55,69,.28);padding:30px 28px 26px;opacity:0;transition:opacity .3s,transform .3s;text-align:center}\n.ofc-card.show{opacity:1;transform:translate(-50%,-50%)}\n.ofc-x{position:absolute;top:12px;right:14px;width:30px;height:30px;border:none;background:transparent;color:#95a8b8;font-size:22px;line-height:1;cursor:pointer;border-radius:50%}\n.ofc-x:hover{background:#eef2f6;color:#2a3745}\n.ofc-eyebrow{font-family:'Mulish',sans-serif;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#95a8b8;margin:0 0 8px}\n.ofc-name{font-family:'Libre Bodoni','Cormorant Garamond',serif;color:#2a3745;font-weight:600;font-size:30px;margin:0 0 10px;line-height:1.1}\n.ofc-desc{font-family:'Mulish',sans-serif;font-size:14.5px;color:#566a7a;margin:0 0 18px}\n.ofc-form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}\n.ofc-form input[type=email]{flex:1;min-width:180px;font-family:'Mulish';font-size:14.5px;color:#2a3745;background:#fbfcfd;border:1px solid #dce4ec;border-radius:999px;padding:12px 18px;outline:none}\n.ofc-form input[type=email]:focus{border-color:#95a8b8}\n.ofc-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Mulish',sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;padding:12px 22px;border-radius:999px;color:#f5f6f8;border:none;cursor:pointer;white-space:nowrap;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(175deg,#3b4c5f 0%,#2b3947 48%,#222e3a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(0,0,0,.28),0 2px 6px rgba(42,55,69,.28)}\n.ofc-btn[disabled]{opacity:.7;cursor:default}\n.ofc-btn .dot{width:6px;height:6px;border-radius:50%;background:#afc8de;box-shadow:0 0 6px rgba(175,200,222,.85);flex:0 0 auto}\n.ofc-fine{font-size:11.5px;color:#95a8b8;margin:14px 0 0}\n.ofc-fine a{color:#4e6c86}\n.ofc-msg{font-size:13.5px;margin:14px 0 0;line-height:1.55}\n.ofc-msg.ok{color:#2f6b45}\n.ofc-msg.err{color:#9a3b3b}\n.ofc-alt{font-size:12px;color:#95a8b8;margin:12px 0 0}\n.ofc-alt a{color:#4e6c86;cursor:pointer;text-decoration:underline}\n\n/* convite da home: rodape flutuante, nunca interstitial */\n.ofc-banner.ofc-invite{max-height:40vh;overflow:auto}\n.ofc-banner.ofc-invite .ofc-fine{margin:10px 0 0;text-align:left}\n@media(max-width:560px){.ofc-banner.ofc-invite{left:0;right:0;bottom:0;width:auto;max-width:none;max-height:34vh;border-radius:16px 16px 0 0;padding:16px 18px 20px;transform:translateY(26px);box-shadow:0 -10px 34px rgba(42,55,69,.2)}.ofc-banner.ofc-invite.show{transform:translateY(0)}}\n/* banner (post 1) */\n.ofc-banner{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);z-index:9997;width:min(620px,94vw);background:#fff;border:1px solid #e9edf2;border-radius:16px;box-shadow:0 16px 44px rgba(42,55,69,.22);padding:18px 20px;display:flex;gap:16px;align-items:center;opacity:0;transition:opacity .3s,transform .3s}\n.ofc-banner.show{opacity:1;transform:translateX(-50%) translateY(0)}\n.ofc-banner .txt{flex:1;min-width:0}\n.ofc-banner .ofc-name{font-size:20px;margin:0 0 3px;text-align:left}\n.ofc-banner .ofc-eyebrow{text-align:left;margin:0 0 6px}\n.ofc-banner .ofc-desc{text-align:left;margin:0;font-size:13px}\n.ofc-banner .ofc-form{justify-content:flex-start;margin-top:10px}\n.ofc-banner .ofc-x{position:static;flex:0 0 auto;align-self:flex-start}\n@media(max-width:560px){.ofc-banner{flex-direction:column;align-items:stretch}.ofc-banner .ofc-x{position:absolute;top:8px;right:10px}}\n/* paywall (post 2+) */\n.ofc-locked{max-height:560px;overflow:hidden;position:relative}\n.ofc-fade{position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(180deg,rgba(245,246,248,0),#f5f6f8 78%);pointer-events:none;z-index:1}\n.ofc-wall{max-width:520px;margin:-40px auto 40px;position:relative;z-index:2;background:#fff;border:1px solid #e9edf2;border-radius:18px;box-shadow:0 20px 50px rgba(42,55,69,.16);padding:32px 28px 26px;text-align:center}\n";function ensure(){if(!document.getElementById("ofc-style")){var s=document.createElement("style");s.id="ofc-style";s.textContent=CSS;(document.head||document.documentElement).appendChild(s);}}ensure();window.addEventListener("scroll",ensure,{passive:true});var n=0,iv=setInterval(function(){ensure();if(++n>40)clearInterval(iv);},500);try{OFC.home();}catch(e){}try{OFC.blog();}catch(e){}})();</script>
 </body></html>
