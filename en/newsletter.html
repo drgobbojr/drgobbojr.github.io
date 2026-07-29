@@ -97,6 +97,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<link rel="icon" type="image/svg+xml" href="/img/favicon-artem-curant.svg">
+<link rel="icon" type="image/png" href="/img/marca-artem-curant.png">
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -177,7 +179,7 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
     if(!ok||!consent.checked){show("Enter a valid email and check the consent box.",'err');return;}
     var orig=btn.innerHTML; btn.disabled=true; btn.innerHTML="Sending…";
     fetch(G+'/members/api/integrity-token/',{method:'GET'}).then(function(r){return r.text();}).then(function(token){
-      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:val,emailType:'signup',labels:[],name:'',autoRedirect:true,integrityToken:token})});
+      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:val,emailType:'signup',labels:[],name:'',autoRedirect:true,integrityToken:token,newsletters:[{name:'The Thread of Care'}]})});
     }).then(function(r){
       if(r.ok){row.style.display='none';clab.style.display='none';show("Almost there. I have sent a confirmation email to "+val+'.','ok');}
       else{show("I could not finish right now. Please try again in a moment.",'err');btn.disabled=false;btn.innerHTML=orig;}

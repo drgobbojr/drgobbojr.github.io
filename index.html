@@ -15,6 +15,7 @@
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="Dr. Marcelo Gobbo Jr., Médico de Família e Comunidade, CRM-MG 74.511, RQE 69038">
 <meta name="description" content="Cuidado longitudinal para famílias atípicas e para quem convive com o transtorno mental grave. Presencial e telemedicina para todo o Brasil. CRM-MG 74.511 · RQE 69038.">
+<link rel="icon" type="image/svg+xml" href="/img/favicon-artem-curant.svg">
 <link rel="icon" type="image/png" href="/img/marca-artem-curant.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -663,7 +664,7 @@ body{font-family:'Mulish',sans-serif}
   function subscribe(email, btn, msg, onDone){
     var orig=btn.innerHTML; btn.disabled=true; btn.innerHTML='Enviando…';
     fetch(G+'/members/api/integrity-token/',{method:'GET'}).then(function(r){return r.text();}).then(function(tok){
-      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,emailType:'signup',labels:[],name:'',autoRedirect:true,integrityToken:tok})});
+      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,emailType:'signup',labels:[],name:'',autoRedirect:true,integrityToken:tok,newsletters:[{name:'O fio do cuidado'}]})});
     }).then(function(r){
       if(r.ok){setSub();msg.className='ofc-msg ok';msg.textContent='Pronto! Enviei um e-mail de confirmação para '+email+'. Boa leitura.';onDone&&onDone();}
       else{msg.className='ofc-msg err';msg.textContent='Não consegui agora. Tente de novo em instantes.';btn.disabled=false;btn.innerHTML=orig;}

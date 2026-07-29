@@ -129,6 +129,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
 </style>
+<link rel="icon" type="image/svg+xml" href="/img/favicon-artem-curant.svg">
+<link rel="icon" type="image/png" href="/img/marca-artem-curant.png">
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -397,7 +399,7 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
   function magic(email, mode, btn, msg, cb){
     var orig=btn.innerHTML; btn.disabled=true; btn.innerHTML=T.sending;
     fetch(G+'/members/api/integrity-token/',{method:'GET'}).then(function(r){return r.text();}).then(function(tok){
-      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,emailType:mode,labels:[],name:'',autoRedirect:true,integrityToken:tok})});
+      return fetch(G+'/members/api/send-magic-link/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,emailType:mode,labels:[],name:'',autoRedirect:true,integrityToken:tok,newsletters:(mode==='signup'?[{name:'The Thread of Care'}]:undefined)})});
     }).then(function(r){ cb(r.ok, orig, false); })
       .catch(function(){ cb(false, orig, true); });
   }
