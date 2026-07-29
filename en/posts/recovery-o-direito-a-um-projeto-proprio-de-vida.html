@@ -60,6 +60,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -107,6 +115,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -131,6 +153,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <p class="lead">Stabilizing symptoms is the beginning of the work, not its end. Here is what the recovery model, and the experience of people living with severe mental illness, teach about getting a future back.</p>
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>6 min read</span><span class="tag">recovery in mental health</span><span class="tag">severe mental illness</span><span class="tag">psychosocial rehabilitation</span><span class="tag">life goals</span><span class="tag">citizenship and mental health</span></div>
   <div class="rule"></div>
+
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="rcT rcD"><title id="rcT">Violão encostado e porta entreaberta com luz</title><desc id="rcD">Ilustração editorial em tons de marinho e âmbar. Um violão espera encostado enquanto um fio ocre corre até uma porta entreaberta, de onde entra a luz.</desc><defs><linearGradient id="rcceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="rclz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#rcceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><rect x="120" y="150" width="160" height="180" rx="8" fill="#16202A" stroke="#2E3D4C" stroke-width="2"/><rect class="lum" x="128" y="158" width="144" height="164" rx="5" fill="#D9B689" opacity="0.25"/><rect x="760" y="200" width="150" height="270" fill="#0E161D" stroke="#6E7C8A" stroke-width="2"/><path class="lum" d="M910 200 L1010 470 L910 470 Z" fill="#D9B689" opacity="0.5"/><rect x="893" y="200" width="17" height="270" fill="#3E3629"/><circle cx="898" cy="342" r="4" fill="#D9B689"/><ellipse cx="470" cy="430" rx="52" ry="40" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.6"/><ellipse cx="470" cy="430" rx="12" ry="10" fill="#131C24"/><rect x="462" y="300" width="9" height="100" fill="#3E3629" transform="rotate(14 466 350)"/><path class="fioA" d="M470 470 C 560 500, 660 490, 740 470 C 800 454, 850 430, 900 410" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/><ellipse class="lum" cx="300" cy="300" rx="120" ry="86" fill="url(#rclz)"/><rect x="297" y="318" width="6" height="64" rx="3" fill="#0E161D"/><path d="M274 322 L326 322 L300 286 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="300" cy="306" r="5" fill="#E8E0D3"/></svg><figcaption>The guitar waiting, the door ajar, a life project on the other side.</figcaption></figure>
 <p>The question usually arrives at the end of the appointment, when the prescription is already signed and a hand is already reaching for the door. Someone wants to know whether the person will still be able to work, and the one asking is almost never the patient, but the mother, the brother or the wife, who are really asking something else, whether any possible future still exists there.</p>
 <p>I spent years learning to answer that with caution. The psychiatry I studied in books measured success by controlled symptoms, by the hospitalizations avoided, and by well-adjusted doses, and none of that has stopped mattering to me. What time taught me is that none of it is enough on its own, because clinical stability is a treatment’s starting point, not its destination.</p>
 <h2>What recovery means in mental health</h2>
@@ -158,6 +182,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related">
+
+  <div class="caixa rvl"><span class="selo">What the research shows</span><h3>Recovery promises meaning, not miracles</h3><p>In 1993, William Anthony, a researcher at Boston University, described recovery as a way of living a satisfying, hopeful, and contributing life even within the limits the illness imposes. The definition has aged well because it promises no miracle. It promises meaning.</p><p>Almost twenty years later, Mary Leamy and her team at King&rsquo;s College London reviewed 97 studies and summarized the heart of the process in the acronym CHIME, which stands for connectedness, hope, identity, meaning, and empowerment. Complete remission of symptoms does not appear on that list, because it is possible to walk in recovery while living with symptoms.</p></div>
+
+  <div class="caixa rvl"><span class="selo">From research to law</span><h3>Citizenship you can measure, now law</h3><p>In the Yale group&rsquo;s definition, citizenship is a person&rsquo;s concrete connection to rights, responsibilities, roles, resources, and relationships, the five Rs. In 2012, Rowe and colleagues published an instrument to measure that everyday citizenship, built with 75 participants who used mental health services, and the analysis revealed seven domains ranging from personal responsibilities to civil rights.</p><p>Brazil wrote this same idea into law. Law 10,216 of 2001 guarantees people with mental illness the right to treatment aimed at achieving recovery through inclusion in the family, in work, and in the community.</p></div>
   <h2>Also worth reading</h2>
   <a href="/en/posts/tdah-sem-rotulo-o-que-uma-avaliacao-cuidadosa-muda.html"><span class="cat">Neurodevelopment · Jun 28, 2026</span><span class="t" style="display:block">ADHD without the label: what a careful evaluation changes</span></a><a href="/en/posts/a-familia-inteira-como-unidade-de-cuidado.html"><span class="cat">Family medicine · Jun 9, 2026</span><span class="t" style="display:block">The whole family as the unit of care</span></a>
 </section>
@@ -489,5 +517,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>

@@ -60,6 +60,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -107,6 +115,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -131,6 +153,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <p class="lead">There is a tiredness that a good night’s sleep will not fix, and that is ashamed to say its own name. Science has given it a name, and naming it, in this case, is where care begins.</p>
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>8 min read</span><span class="tag">parental burnout</span><span class="tag">parenting stress</span><span class="tag">parents’ mental health</span><span class="tag">caregiver overload</span><span class="tag">caring for the caregiver</span></div>
   <div class="rule"></div>
+
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="bpT bpD"><title id="bpT">Figura sentada entre um abajur apagando e outro reaceso</title><desc id="bpD">Ilustração editorial em tons de marinho e âmbar. Uma figura sentada, um abajur quase apagado no chão e, adiante, outro abajur aceso sobre a mesa, ligados por um fio ocre.</desc><defs><linearGradient id="bpceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="bplz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#bpceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><rect x="90" y="130" width="150" height="200" rx="8" fill="#16202A" stroke="#2E3D4C" stroke-width="2"/><circle class="cint" cx="165" cy="195" r="26" fill="#E8E0D3" opacity="0.85"/><circle cx="175" cy="189" r="26" fill="#1D2833" opacity="0.35"/><rect x="470" y="360" width="150" height="14" rx="7" fill="#2E3D4C"/><rect x="482" y="374" width="12" height="96" fill="#2E3D4C"/><rect x="596" y="374" width="12" height="96" fill="#2E3D4C"/><circle cx="545" cy="290" r="26" fill="#0E161D"/><path d="M505 360 Q545 316 585 360 L585 366 L505 366 Z" fill="#0E161D"/><ellipse cx="380" cy="430" rx="70" ry="50" fill="url(#bplz)" opacity="0.35"/><rect x="377" y="430" width="6" height="40" fill="#0E161D"/><path d="M357 432 L403 432 L380 404 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.2"/><rect x="760" y="400" width="90" height="8" rx="4" fill="#2E3D4C"/><rect x="799" y="408" width="10" height="62" fill="#2E3D4C"/><ellipse class="lum" cx="805" cy="330" rx="150" ry="108" fill="url(#bplz)"/><rect x="802" y="348" width="6" height="64" rx="3" fill="#0E161D"/><path d="M779 352 L831 352 L805 316 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="805" cy="336" r="5" fill="#E8E0D3"/><path class="fioA" d="M380 452 C 460 480, 560 480, 640 462 C 700 448, 740 420, 800 402" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/></svg><figcaption>When your own light dims, another lamp can be lit.</figcaption></figure>
 <p>She came to the appointment for her son, the way it almost always happens. She brought the health booklet, the school reports, and a list of questions saved on her phone. Only at the end, hand already on her purse, did her voice crack, and what came out was a sentence I hear more often than you might imagine, spoken almost without sound. I love my children, doctor, but I can’t keep being a mother. Right behind it came the apology, as if being exhausted were a crime.</p>
 <h2>Science took this exhaustion seriously</h2>
 <p>What that mother described has a name. In 2018, Isabelle Roskam and Moïra Mikolajczak, researchers at the University of Louvain in Belgium, started from the testimony of hundreds of exhausted parents and built the instrument that now measures parental burnout in dozens of countries. The picture that emerged has four faces: exhaustion in one’s role as a parent, the painful contrast between the parent you are today and the parent you once were, the feeling of being fed up with your own parenting, and emotional distancing from your children. This is not self-indulgence or weakness of character. It is a burnout specific to the caregiving role, and it tends to reach precisely the people who took that role most seriously.</p>
@@ -159,6 +183,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related">
+
+  <div class="caixa rvl"><span class="selo">What the research shows</span><h3>The four faces of parental burnout</h3><p>In 2018, Isabelle Roskam and Moïra Mikolajczak, at the University of Louvain, started from the testimony of hundreds of exhausted parents and built the instrument that now measures parental burnout in dozens of countries. This is not self-indulgence or weakness of character, but a burnout specific to the caregiving role.</p><p>The picture that emerged has four faces, exhaustion in one&rsquo;s role as a parent, the contrast between the parent you are today and the parent you once were, the feeling of being fed up with your own parenting, and emotional distancing from your children. It tends to reach precisely the people who took that role most seriously.</p></div>
+
+  <div class="caixa rvl"><span class="selo">Numbers that matter</span><h3>A map of 42 countries, and Brazil</h3><p>An international consortium applied the instrument to 17,409 fathers and mothers in 42 countries, and the prevalence of parental burnout varied dramatically from one place to the next. What best explains that variation is not income or the number of children, but how individualistic each culture is.</p><p>In Brazil, a 2024 survey heard from 2,000 mothers and found signs of emotional exhaustion in nine out of ten respondents, with six out of ten caregivers showing signs of parental burnout. It is a market survey, with limitations, and even so the size of that number matches what I see in my office.</p></div>
   <h2>Also worth reading</h2>
   <a href="/en/posts/a-familia-inteira-como-unidade-de-cuidado.html"><span class="cat">Family medicine · Jun 9, 2026</span><span class="t" style="display:block">The whole family as the unit of care</span></a><a href="/en/posts/tdah-sem-rotulo-o-que-uma-avaliacao-cuidadosa-muda.html"><span class="cat">Neurodevelopment · Jun 28, 2026</span><span class="t" style="display:block">ADHD without the label: what a careful evaluation changes</span></a>
 </section>
@@ -490,5 +518,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>

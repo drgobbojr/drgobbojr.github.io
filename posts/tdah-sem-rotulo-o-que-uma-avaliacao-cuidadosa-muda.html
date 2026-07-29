@@ -59,6 +59,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -106,6 +114,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -130,6 +152,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <p class="lead">Entre o alívio de dar nome ao que se vive e o risco de dar esse nome cedo demais existe um caminho, que é a avaliação clínica feita com tempo, e é ela que faz o diagnóstico de TDAH passar a valer alguma coisa.</p>
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>6 min de leitura</span><span class="tag">TDAH</span><span class="tag">diagnóstico de TDAH</span><span class="tag">avaliação clínica</span><span class="tag">neurodesenvolvimento</span><span class="tag">neurodivergência</span></div>
   <div class="rule"></div>
+
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="trT trD"><title id="trT">Lupa sobre um fio embaraçado que segue liso</title><desc id="trD">Ilustração editorial em tons de marinho e âmbar. Sobre a mesa, uma lupa examina o trecho embaraçado de um fio ocre que adiante segue desembaraçado.</desc><defs><linearGradient id="trceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="trlz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#trceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><rect x="900" y="120" width="180" height="210" rx="8" fill="#16202A" stroke="#2E3D4C" stroke-width="2"/><circle class="cint" cx="990" cy="185" r="26" fill="#E8E0D3" opacity="0.85"/><circle cx="1000" cy="179" r="26" fill="#1D2833" opacity="0.35"/><ellipse class="lum" cx="240" cy="280" rx="150" ry="108" fill="url(#trlz)"/><rect x="237" y="298" width="6" height="64" rx="3" fill="#0E161D"/><path d="M214 302 L266 302 L240 266 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="240" cy="286" r="5" fill="#E8E0D3"/><rect x="330" y="430" width="560" height="12" rx="6" fill="#2E3D4C"/><rect x="352" y="442" width="14" height="52" fill="#2E3D4C"/><rect x="854" y="442" width="14" height="52" fill="#2E3D4C"/><path class="fioA" d="M360 410 C 400 380, 430 420, 470 396 C 500 380, 490 418, 520 404 C 545 392, 540 372, 566 380 C 592 388, 588 416, 612 404 C 660 382, 760 396, 830 398 C 862 399, 880 398, 900 396" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/><circle cx="540" cy="392" r="64" fill="none" stroke="#E8E0D3" stroke-width="5" opacity="0.9"/><rect x="588" y="436" width="66" height="10" rx="5" fill="#E8E0D3" opacity="0.9" transform="rotate(38 588 436)"/><circle class="cint" cx="540" cy="392" r="58" fill="#D9B689" opacity="0.12"/></svg><figcaption>Antes do rótulo, a lupa: olhar de perto muda o que se vê.</figcaption></figure>
   
 <p>O bilhete da escola chega numa quarta-feira, dobrado dentro da agenda, sugerindo uma avaliação para TDAH. Você lê duas vezes e sente ao mesmo tempo um alívio, porque alguém finalmente deu nome ao que você já via em casa, e um incômodo que não passa, a dúvida sobre se é isso mesmo.</p>
 <p>Atendo essa cena com frequência, e atendo também a sua versão adulta, quando a pessoa se reconhece num vídeo de trinta segundos e chega ao consultório perguntando se tem TDAH. As duas chegadas merecem a mesma resposta, que é olhar para o quadro com calma antes de qualquer conclusão.</p>
@@ -159,6 +183,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related">
+
+  <div class="caixa rvl"><span class="selo">O que a pesquisa mostra</span><h3>Consenso internacional e prevalência mundial</h3><p>Em 2021, Stephen Faraone coordenou um consenso internacional assinado por 80 pesquisadores de 27 países, reunindo 208 conclusões sobre o TDAH, cada uma sustentada por estudos com milhares de participantes ou por metanálises. O documento nasceu para enfrentar a desinformação que estigmatiza quem tem o transtorno e atrasa o tratamento de quem precisa dele.</p><p>O pesquisador brasileiro Guilherme Polanczyk revisou com sua equipe 102 estudos, somando mais de 170 mil crianças e adolescentes de todas as regiões do mundo, e chegou a uma prevalência estimada de 5,29%. A variação entre os países se explicava menos pela geografia e mais pelo método de cada estudo, o que mostra que o TDAH não é doença de país rico nem moda de rede social.</p></div>
+
+  <div class="caixa rvl"><span class="selo">Números que importam</span><h3>O que 334 estudos revelam</h3><p>Luise Kazda e sua equipe, na Universidade de Sydney, examinaram 334 estudos publicados ao longo de quatro décadas. Os diagnósticos de fato aumentaram, os casos novos tendem a se concentrar no extremo mais leve do espectro, e justamente nesses casos mais leves os poucos estudos disponíveis sugerem retornos decrescentes, situação em que os danos do rótulo e do tratamento podem superar os benefícios.</p><p>Um detalhe mostra o tamanho da nossa ignorância. Das centenas de pesquisas revisadas, apenas cinco avaliaram diretamente o balanço entre benefício e dano nos casos mais leves, e essa é mais uma razão para não atravessar essa fronteira com pressa.</p></div>
   <h2>Leia também</h2>
   <a href="/posts/recovery-o-direito-a-um-projeto-proprio-de-vida.html"><span class="cat">Saúde mental · 12 jul 2026</span><span class="t" style="display:block"><em>Recovery</em>: o direito a um projeto próprio de vida</span></a><a href="/posts/a-familia-inteira-como-unidade-de-cuidado.html"><span class="cat">Medicina de família · 09 jun 2026</span><span class="t" style="display:block">A família inteira como unidade de cuidado</span></a>
 </section>
@@ -490,5 +518,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>

@@ -60,6 +60,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -107,6 +115,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -131,6 +153,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <p class="lead">Between the relief of naming what you are living through and the risk of naming it too soon there is a path, the clinical evaluation done with time, and it is what makes an ADHD diagnosis worth anything at all.</p>
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>6 min read</span><span class="tag">ADHD</span><span class="tag">ADHD diagnosis</span><span class="tag">clinical evaluation</span><span class="tag">neurodevelopment</span><span class="tag">neurodivergence</span></div>
   <div class="rule"></div>
+
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="trT trD"><title id="trT">Lupa sobre um fio embaraçado que segue liso</title><desc id="trD">Ilustração editorial em tons de marinho e âmbar. Sobre a mesa, uma lupa examina o trecho embaraçado de um fio ocre que adiante segue desembaraçado.</desc><defs><linearGradient id="trceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="trlz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#trceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><rect x="900" y="120" width="180" height="210" rx="8" fill="#16202A" stroke="#2E3D4C" stroke-width="2"/><circle class="cint" cx="990" cy="185" r="26" fill="#E8E0D3" opacity="0.85"/><circle cx="1000" cy="179" r="26" fill="#1D2833" opacity="0.35"/><ellipse class="lum" cx="240" cy="280" rx="150" ry="108" fill="url(#trlz)"/><rect x="237" y="298" width="6" height="64" rx="3" fill="#0E161D"/><path d="M214 302 L266 302 L240 266 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="240" cy="286" r="5" fill="#E8E0D3"/><rect x="330" y="430" width="560" height="12" rx="6" fill="#2E3D4C"/><rect x="352" y="442" width="14" height="52" fill="#2E3D4C"/><rect x="854" y="442" width="14" height="52" fill="#2E3D4C"/><path class="fioA" d="M360 410 C 400 380, 430 420, 470 396 C 500 380, 490 418, 520 404 C 545 392, 540 372, 566 380 C 592 388, 588 416, 612 404 C 660 382, 760 396, 830 398 C 862 399, 880 398, 900 396" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/><circle cx="540" cy="392" r="64" fill="none" stroke="#E8E0D3" stroke-width="5" opacity="0.9"/><rect x="588" y="436" width="66" height="10" rx="5" fill="#E8E0D3" opacity="0.9" transform="rotate(38 588 436)"/><circle class="cint" cx="540" cy="392" r="58" fill="#D9B689" opacity="0.12"/></svg><figcaption>Before the label, the lens: looking closely changes what you see.</figcaption></figure>
 <p>The note from school arrives on a Wednesday, folded inside the planner, suggesting an evaluation for ADHD. You read it twice and feel two things at once, relief, because someone has finally named what you were already seeing at home, and a discomfort that will not go away, the doubt about whether that is really it.</p>
 <p>I see that scene often, and I also see its adult version, when someone recognizes themselves in a thirty-second video and arrives at the office asking whether they have ADHD. Both arrivals deserve the same answer, which is to look at the whole picture calmly before reaching any conclusion.</p>
 <h2>ADHD is real and not an invention of our time</h2>
@@ -158,6 +182,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related">
+
+  <div class="caixa rvl"><span class="selo">What the research shows</span><h3>International consensus and worldwide prevalence</h3><p>In 2021, Stephen Faraone coordinated an international consensus signed by 80 researchers from 27 countries, gathering 208 conclusions about ADHD, each supported by studies with thousands of participants or by meta-analyses. The document was born to confront the misinformation that stigmatizes people with the disorder and delays treatment for those who need it.</p><p>The Brazilian researcher Guilherme Polanczyk and his team reviewed 102 studies, adding up to more than 170,000 children and adolescents from every region of the world, and arrived at an estimated prevalence of 5.29%. The variation across countries was explained less by geography than by each study&rsquo;s methods, which shows that ADHD is neither a rich-country disease nor a social media fad.</p></div>
+
+  <div class="caixa rvl"><span class="selo">Numbers that matter</span><h3>What 334 studies reveal</h3><p>Luise Kazda and her team at the University of Sydney examined 334 studies published across four decades. Diagnoses have indeed increased, the new cases tend to cluster at the mildest end of the spectrum, and precisely in those milder cases the few available studies suggest diminishing returns, a situation in which the harms of the label and the treatment may outweigh the benefits.</p><p>One detail shows the size of our ignorance. Of the hundreds of studies reviewed, only five directly assessed the balance of benefit and harm in the milder cases, and that is one more reason not to cross that frontier in a hurry.</p></div>
   <h2>Also worth reading</h2>
   <a href="/en/posts/recovery-o-direito-a-um-projeto-proprio-de-vida.html"><span class="cat">Mental health · Jul 12, 2026</span><span class="t" style="display:block">Recovery: the right to a life of one’s own</span></a><a href="/en/posts/a-familia-inteira-como-unidade-de-cuidado.html"><span class="cat">Family medicine · Jun 9, 2026</span><span class="t" style="display:block">The whole family as the unit of care</span></a>
 </section>
@@ -489,5 +517,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>

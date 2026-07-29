@@ -59,6 +59,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -106,6 +114,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -131,6 +153,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>5 min de leitura</span><span class="tag">TDAH no casamento</span><span class="tag">TDAH no adulto</span><span class="tag">função executiva</span><span class="tag">reunião semanal de casal</span><span class="tag">vida a dois</span></div>
   <div class="rule"></div>
 
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="ctT ctD"><title id="ctT">Sala à noite com duas poltronas frente a frente</title><desc id="ctD">Ilustração editorial em tons de marinho e âmbar. Duas poltronas frente a frente, um abajur entre elas e um fio ocre com um nó no meio ligando uma à outra.</desc><defs><linearGradient id="ctceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="ctlz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#ctceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><rect x="80" y="120" width="150" height="210" rx="8" fill="#16202A" stroke="#2E3D4C" stroke-width="2"/><circle class="cint" cx="155" cy="190" r="26" fill="#E8E0D3" opacity="0.85"/><circle cx="165" cy="184" r="26" fill="#1D2833" opacity="0.35"/><ellipse class="lum" cx="600" cy="300" rx="170" ry="122" fill="url(#ctlz)"/><rect x="597" y="318" width="6" height="64" rx="3" fill="#0E161D"/><path d="M574 322 L626 322 L600 286 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="600" cy="306" r="5" fill="#E8E0D3"/><path d="M250 470 L250 360 Q250 330 285 330 L360 330 Q380 330 380 360 L380 400 L395 400 L395 470 Z" fill="#0E161D" stroke="#6E7C8A" stroke-width="2"/><rect x="262" y="452" width="14" height="26" fill="#0E161D"/><rect x="368" y="452" width="14" height="26" fill="#0E161D"/><path d="M950 470 L950 360 Q950 330 915 330 L840 330 Q820 330 820 360 L820 400 L805 400 L805 470 Z" fill="#0E161D" stroke="#6E7C8A" stroke-width="2"/><rect x="924" y="452" width="14" height="26" fill="#0E161D"/><rect x="818" y="452" width="14" height="26" fill="#0E161D"/><rect x="560" y="400" width="80" height="8" rx="4" fill="#2E3D4C"/><rect x="594" y="408" width="10" height="62" fill="#2E3D4C"/><path class="fioA" d="M395 420 C 470 420, 500 388, 560 392 C 585 394, 585 418, 604 414 C 623 410, 612 386, 636 390 C 700 400, 740 420, 805 420" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/></svg><figcaption>Duas cadeiras, um fio com nós no meio, e a conversa que desfaz o nó.</figcaption></figure>
+
 <p>Ela veio à consulta falar do marido. Trouxe a lista das contas pagas com atraso, das promessas adiadas, do aniversário do filho quase esquecido, e no meio da lista a voz mudou de tom. Casei com um homem, doutor, e virei a agenda dele. O marido, diagnosticado com TDAH havia pouco tempo, ouvia tudo de cabeça baixa, com a expressão de quem já se cansou de decepcionar. Nenhum dos dois estava errado sobre o próprio cansaço, e os dois estavam presos no mesmo ciclo.</p>
 <h2>A ciência já mediu esse desgaste</h2>
 <p>Esse ciclo é conhecido pela ciência. Uma revisão de 2021 conduzida por Brian Wymbs e Will Canu, nos Estados Unidos, resume um corpo amplo de pesquisa apontando que adultos com TDAH tendem a viver relações amorosas mais curtas e mais conflituosas do que adultos sem o transtorno. Bem antes dela, em 2004, Laurel Eakin, Lily Hechtman e colegas compararam 33 adultos casados com TDAH a um grupo controle e encontraram pior ajuste conjugal e mais disfunção familiar nos casais tocados pelo transtorno, com um detalhe que digo sempre aos meus pacientes, os próprios adultos com TDAH enxergavam o casamento e a família com olhos mais pessimistas do que seus cônjuges. As entrevistas do estudo mostraram ainda o que a esposa da minha consulta conhecia de cor, cônjuges assumindo compensações silenciosas para cobrir as dificuldades do parceiro.</p>
@@ -149,6 +173,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related"><h2>Leia também</h2><a href="/posts/tdah-sem-rotulo-o-que-uma-avaliacao-cuidadosa-muda.html"><span class="cat">Neurodesenvolvimento · 28 jun 2026</span><span class="t" style="display:block">TDAH sem rótulo: o que uma avaliação cuidadosa muda</span></a><a href="/posts/burnout-parental-quando-cuidar-esgota.html"><span class="cat">Saúde mental · 20 jul 2026</span><span class="t" style="display:block">Burnout parental não é falta de amor</span></a></section>
+
+  <div class="caixa rvl"><span class="selo">O que a pesquisa mostra</span><h3>O desgaste conjugal do TDAH tem medida</h3><p>Uma revisão de 2021, conduzida por Brian Wymbs e Will Canu nos Estados Unidos, resume um corpo amplo de pesquisa. Adultos com TDAH tendem a viver relações amorosas mais curtas e mais conflituosas do que adultos sem o transtorno.</p><p>Bem antes, em 2004, Laurel Eakin e Lily Hechtman compararam 33 adultos casados com TDAH a um grupo controle e encontraram pior ajuste conjugal e mais disfunção familiar. Digo sempre aos meus pacientes um detalhe desse estudo, os próprios adultos com TDAH enxergavam o casamento e a família com olhos mais pessimistas do que seus cônjuges.</p></div>
+
+  <div class="caixa rvl"><span class="selo">Números que importam</span><h3>A cadeira do cônjuge segue vazia</h3><p>Uma revisão norueguesa de 2024 sobre programas de psicoeducação no TDAH adulto encontrou um dado que me incomoda. De dez intervenções mapeadas, só duas envolviam a família, e é justamente o cônjuge quem administra o transtorno no dia a dia.</p><p>O peso, no entanto, alcança a casa inteira. O grupo de Klaus Minde, na Universidade McGill, mostrou em 2003 que o funcionamento conjugal e familiar aparece prejudicado independentemente de qual dos dois tem o diagnóstico, e que os filhos dessas famílias carregam mais problemas emocionais e de comportamento.</p></div>
 <div class="cta">
   <h2>Um cuidado que enxerga o todo</h2>
   <p>Se a sua família procura um médico que acompanhe de perto, ao longo do tempo, vamos conversar. O atendimento é <span style="color:#2a3745;font-weight:600">presencial em Uberlândia e por videoconferência, para todo o Brasil e o mundo</span>.</p>
@@ -477,5 +505,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>

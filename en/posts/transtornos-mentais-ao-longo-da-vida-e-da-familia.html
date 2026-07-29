@@ -60,6 +60,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -107,6 +115,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -131,6 +153,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <p class="lead">I follow whole families over time, and I watch mental disorders show up at their typical ages while the home reshapes itself around them. Here I bring together that double map, the one of each person’s life and the one of the family that holds everyone.</p>
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>5 min read</span><span class="tag">mental disorders across the lifespan</span><span class="tag">age of onset</span><span class="tag">family life cycle</span><span class="tag">mental health prevention</span><span class="tag">mental health in old age</span></div>
   <div class="rule"></div>
+
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="tvT tvD"><title id="tvT">Quatro silhuetas em idades diferentes ligadas por um fio</title><desc id="tvD">Ilustração editorial em tons de marinho e âmbar. Quatro silhuetas, da criança ao idoso, atravessadas por um fio ocre que sobe e desce como uma linha da vida.</desc><defs><linearGradient id="tvceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="tvlz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#tvceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><rect x="920" y="110" width="170" height="220" rx="8" fill="#16202A" stroke="#2E3D4C" stroke-width="2"/><circle class="cint" cx="1005" cy="180" r="26" fill="#E8E0D3" opacity="0.85"/><circle cx="1015" cy="174" r="26" fill="#1D2833" opacity="0.35"/><ellipse class="lum" cx="210" cy="270" rx="150" ry="108" fill="url(#tvlz)"/><rect x="207" y="288" width="6" height="64" rx="3" fill="#0E161D"/><path d="M184 292 L236 292 L210 256 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="210" cy="276" r="5" fill="#E8E0D3"/><ellipse cx="360" cy="410" rx="26" ry="60" fill="#0E161D"/><circle cx="360" cy="343" r="20" fill="#0E161D"/><ellipse cx="560" cy="383" rx="30" ry="87" fill="#0E161D"/><circle cx="560" cy="286" r="23" fill="#0E161D"/><ellipse cx="760" cy="365" rx="33" ry="105" fill="#0E161D"/><circle cx="760" cy="250" r="25" fill="#0E161D"/><ellipse cx="960" cy="390" rx="30" ry="80" fill="#0E161D"/><circle cx="960" cy="301" r="23" fill="#0E161D"/><path class="fioA" d="M300 452 C 360 340, 430 372, 500 330 C 570 288, 640 320, 710 268 C 780 216, 850 300, 920 258 C 970 228, 1010 260, 1060 236" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/><circle class="cint" cx="500" cy="330" r="5" fill="#D9B689"/><circle class="cint" cx="710" cy="268" r="5" fill="#D9B689"/><circle class="cint" cx="920" cy="258" r="5" fill="#D9B689"/></svg><figcaption>From childhood to old age, the same thread runs through the whole house.</figcaption></figure>
 <p>In one family I have followed for years, I have cared for the sleep of a small child, for a father’s anxiety at the peak of his career, and, later, for a grandfather’s memory. Three people, three ages, and three reasons for a visit, and still there was a thread tying it all together, the way each stage of life brings its own risks and how the whole household reorganizes itself around each one. I want to talk about that double map, the one of each person’s life and the one of the family that shelters them all.</p>
 <h2>Each disorder has its season to appear</h2>
 <p>The age at which a mental disorder tends to begin is not random, and the largest picture of this came from Marco Solmi and colleagues, at the University of Padua, in Italy, who in 2022 pooled 192 studies with more than 700,000 people. The peak age of onset for any mental disorder fell at 14 and a half, and nearly half of all cases, 48 percent, had already begun before 18. The same work drew a timeline, with fears and separation anxiety arriving in childhood, eating disorders and substance use in adolescence, schizophrenia emerging in early adulthood, and depression, bipolar disorder, and post-traumatic stress showing up closer to the thirties. Each season of life has, so to speak, its most likely visitors.</p>
@@ -151,6 +175,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related">
+
+  <div class="caixa rvl"><span class="selo">Numbers that matter</span><h3>The ages when disorders begin</h3><p>Marco Solmi and colleagues, at the University of Padua, pooled 192 studies with more than 700,000 people in 2022. The peak age of onset for any mental disorder fell at 14 and a half, and nearly half of all cases, 48 percent, had already begun before 18.</p><p>Ronald Kessler and his team, at Harvard, had already shown in 2005 that half of all the disorders a person will have in life begin by age 14, and three quarters by 24. Knowing this places much of prevention in childhood and adolescence.</p></div>
+
+  <div class="caixa rvl"><span class="selo">What the research shows</span><h3>The family echoes from start to finish</h3><p>In a 2010 study of nearly 52,000 people across 21 countries, the adversities tied to a dysfunctional family environment were the ones that most predicted later disorders. The full set of childhood adversities accounted for about 30 percent of all cases across life.</p><p>At the other end, a 2024 meta-analysis led by Qing Wang, in China, gathered 48 studies with more than 28,000 older adults living in long-term care facilities. Depressive symptoms appeared in about half of them, with loneliness and lack of social support among the main factors.</p></div>
   <h2>Also worth reading</h2>
   <a href="/en/posts/a-familia-inteira-como-unidade-de-cuidado.html"><span class="cat">Family medicine · Jun 9, 2026</span><span class="t" style="display:block">The whole family as the unit of care</span></a><a href="/en/posts/burnout-parental-quando-cuidar-esgota.html"><span class="cat">Mental health · Jul 20, 2026</span><span class="t" style="display:block">Parental burnout is not a lack of love</span></a>
 </section>
@@ -482,5 +510,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>

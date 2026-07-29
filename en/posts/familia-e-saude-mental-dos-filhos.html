@@ -60,6 +60,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -107,6 +115,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -131,6 +153,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <p class="lead">When a child’s mind gets sick, the first question parents ask is usually about medication. Decades of research suggest starting the answer somewhere else, with the life the household lives together.</p>
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>7 min read</span><span class="tag">children's mental health</span><span class="tag">teen anxiety</span><span class="tag">adolescent depression</span><span class="tag">parenting</span><span class="tag">exercise and mental health</span></div>
   <div class="rule"></div>
+
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="fsT fsD"><title id="fsT">Casa à noite com duas janelas acesas</title><desc id="fsD">Ilustração editorial em tons de marinho e âmbar. Uma casa de telhado simples com duas janelas acesas e um fio ocre que sai da porta e corre pelo chão.</desc><defs><linearGradient id="fsceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="fslz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#fsceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><ellipse class="lum" cx="950" cy="240" rx="160" ry="115" fill="url(#fslz)"/><rect x="947" y="258" width="6" height="64" rx="3" fill="#0E161D"/><path d="M924 262 L976 262 L950 226 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="950" cy="246" r="5" fill="#E8E0D3"/><path d="M380 470 L380 300 L600 190 L820 300 L820 470 Z" fill="#0E161D" stroke="#6E7C8A" stroke-width="2"/><path d="M355 312 L600 186 L845 312" fill="none" stroke="#6E7C8A" stroke-width="4" stroke-linecap="round"/><rect class="lum" x="430" y="340" width="70" height="62" rx="4" fill="#D9B689" opacity="0.8"/><rect class="lum" x="700" y="340" width="70" height="62" rx="4" fill="#D9B689" opacity="0.65"/><rect x="560" y="380" width="80" height="90" rx="4" fill="#131C24" stroke="#6E7C8A" stroke-width="1.6"/><circle cx="628" cy="428" r="4" fill="#D9B689"/><path class="fioA" d="M600 470 C 560 520, 420 520, 330 540 C 260 555, 200 540, 150 556" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/><circle class="cint" cx="150" cy="140" r="26" fill="#E8E0D3" opacity="0.85"/><circle cx="160" cy="134" r="26" fill="#1D2833" opacity="0.35"/></svg><figcaption>The house lit from within, and the thread of care running out the door.</figcaption></figure>
 <p>The father arrived with a notebook. He had written down his fourteen-year-old’s schedule, the grades that had tumbled, the restless nights, and he expected to leave the appointment with the name of a medication for the anxiety we had just discussed. When I finished walking him through the plan, he asked the question that interested me more than any other. So what do we change at home, doctor? I told him that half the treatment lived right there, inside that question.</p>
 <h2>How we parent shows up in the numbers</h2>
 <p>That half has a literature behind it. In 2014, Marie Yap and her colleagues at Monash University in Australia reviewed 181 studies on the link between parenting factors and adolescent mental health, taking 111 of them into a meta-analysis. The picture that emerged matches what any clinic observes. Less warmth, more harshness in the form of criticism and hard discipline, over-involvement in a teenager’s life, and frequent fighting between the parents were associated with more depression and more anxiety, while displayed affection and respect for the adolescent’s autonomy landed on the protective side, with stronger evidence for depression than for anxiety. The same team repeated the exercise the following year looking at children, and the pattern held.</p>
@@ -155,6 +179,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related">
+
+  <div class="caixa rvl"><span class="selo">What the research shows</span><h3>Warmth and autonomy play defense</h3><p>In 2014, Marie Yap and her colleagues at Monash University reviewed 181 studies on parenting factors and adolescent mental health, taking 111 of them into a meta-analysis. Less warmth, hard discipline, parental over-involvement, and frequent fighting between the parents were associated with more depression and more anxiety.</p><p>Displayed affection and respect for the adolescent&rsquo;s autonomy landed on the protective side, with stronger evidence for depression. A Swedish cohort published in 2026 found the same thread, perceived parental warmth was associated with fewer symptoms of depression and anxiety years later.</p></div>
+
+  <div class="caixa rvl"><span class="selo">Numbers that matter</span><h3>Exercise as treatment, in numbers</h3><p>In 2025, Ben Singh and his team stacked up 21 meta-analyses, adding up to 375 randomized clinical trials and 38,117 participants ages 5 to 18. Structured exercise programs significantly reduced symptoms of depression and anxiety, with a moderate effect size.</p><p>The programs worked even in short formats of under twelve weeks. The authors concluded that structured exercise should be part of comprehensive mental health care for this age group, and I will happily co-sign that.</p></div>
   <h2>Also worth reading</h2>
   <a href="/en/posts/burnout-parental-quando-cuidar-esgota.html"><span class="cat">Mental health · Jul 20, 2026</span><span class="t" style="display:block">Parental burnout is not a lack of love</span></a><a href="/en/posts/tdah-sem-rotulo-o-que-uma-avaliacao-cuidadosa-muda.html"><span class="cat">Neurodevelopment · Jun 28, 2026</span><span class="t" style="display:block">ADHD without the label: what a careful evaluation changes</span></a>
 </section>
@@ -486,5 +514,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>

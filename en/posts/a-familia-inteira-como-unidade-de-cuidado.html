@@ -60,6 +60,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -107,6 +115,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -131,6 +153,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <p class="lead">A diagnosis lives in a body, but care happens inside a home. Here is why family medicine treats the long, continuous bond with the whole family as a form of intervention, and what the numbers say about it.</p>
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>5 min read</span><span class="tag">family medicine</span><span class="tag">continuity of care</span><span class="tag">family doctor</span><span class="tag">family health</span><span class="tag">doctor-patient relationship</span></div>
   <div class="rule"></div>
+
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="ucT ucD"><title id="ucT">Mesa redonda com cadeiras sob uma luminária</title><desc id="ucD">Ilustração editorial em tons de marinho e âmbar. Uma mesa redonda com cadeiras em volta, uma luminária pendente acesa e um fio ocre que contorna a mesa inteira.</desc><defs><linearGradient id="ucceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="uclz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#ucceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><ellipse class="lum" cx="600" cy="330" rx="240" ry="150" fill="url(#uclz)"/><rect x="596" y="60" width="8" height="150" fill="#0E161D"/><path d="M560 214 L640 214 L600 168 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="600" cy="206" r="6" fill="#E8E0D3"/><ellipse cx="600" cy="400" rx="180" ry="46" fill="#2E3D4C"/><rect x="500" y="404" width="14" height="72" fill="#22303D"/><rect x="686" y="404" width="14" height="72" fill="#22303D"/><rect x="330" y="340" width="70" height="120" rx="10" fill="#0E161D" stroke="#6E7C8A" stroke-width="1.6"/><rect x="800" y="340" width="70" height="120" rx="10" fill="#0E161D" stroke="#6E7C8A" stroke-width="1.6"/><rect x="480" y="300" width="60" height="72" rx="9" fill="#0E161D" stroke="#6E7C8A" stroke-width="1.4"/><rect x="660" y="300" width="60" height="72" rx="9" fill="#0E161D" stroke="#6E7C8A" stroke-width="1.4"/><path class="fioA" d="M420 430 C 470 462, 730 462, 780 430 C 810 410, 780 384, 700 380 C 640 377, 560 377, 500 380 C 420 384, 390 410, 420 430" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/></svg><figcaption>The table set for the whole family, which is the unit of care.</figcaption></figure>
 <p>The appointment was booked for the boy, and yet the one sitting on the edge of the chair, purse in her lap and phone full of medication alarms, is his grandmother, who, already on her feet at the end of the visit, ventures that hers will be quick, doctor, just the blood pressure. The appointment was the boy's, but the whole household had walked into the room with him.</p>
 <p>I learned not to treat that scene as a detour from the agenda, because it is the agenda. We fall ill inside relationships and we get better inside them too, so that when a child receives a difficult diagnosis, the mother's sleep changes, the household budget changes, and even the silence at dinner changes. The chart carries a first name on the cover, but the story almost always carries a family name.</p>
 <h2>What a family physician does</h2>
@@ -156,6 +180,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related">
+
+  <div class="caixa rvl"><span class="selo">In practice</span><h3>The tools of whole-house care</h3><p>The family physician follows people over time, not isolated organs or age brackets, and follows people in relation to one another as well. In Brazil&rsquo;s public health system, the Family Health Strategy organizes care exactly this way, by families and territories.</p><p>This way of working creates tools of its own. The genogram, a drawing of the family with its illnesses, bonds and caregiving mapped out, often says more about a symptom than many tests can, and the care plan always keeps the caregiver in view, since a caregiver who falls ill brings down the care of the entire family.</p></div>
+
+  <div class="caixa rvl"><span class="selo">Numbers that matter</span><h3>The bond that shows up in the numbers</h3><p>In 2018, Denis Pereira Gray and his team reviewed 22 studies from nine countries on continuity of care and mortality, and 18 of them, 81.8%, found fewer deaths among patients who kept the same doctor over time. Not by chance, the article&rsquo;s title came out as a question, asking whether continuity of care is a matter of life and death.</p><p>Four years later, a Norwegian group led by Hogne Sandvik examined the records of 4.5 million people. Those with more than fifteen years of continuity with the same doctor had about 25% lower odds of dying that year, about 28% fewer acute hospitalizations and about 30% fewer visits to urgent care.</p></div>
   <h2>Also worth reading</h2>
   <a href="/en/posts/recovery-o-direito-a-um-projeto-proprio-de-vida.html"><span class="cat">Mental health · Jul 12, 2026</span><span class="t" style="display:block">Recovery: the right to a life of one’s own</span></a><a href="/en/posts/tdah-sem-rotulo-o-que-uma-avaliacao-cuidadosa-muda.html"><span class="cat">Neurodevelopment · Jun 28, 2026</span><span class="t" style="display:block">ADHD without the label: what a careful evaluation changes</span></a>
 </section>
@@ -487,5 +515,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>

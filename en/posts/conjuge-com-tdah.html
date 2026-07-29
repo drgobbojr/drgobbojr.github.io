@@ -60,6 +60,14 @@ article h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px
 .faq h2{margin-top:0}
 .faq h3{font-family:'Mulish',sans-serif;font-size:16.5px;font-weight:700;margin:20px 0 6px}
 .faq p{margin-bottom:10px;font-size:16px}
+.figura{margin:32px 0 42px}
+.figura svg,.figura img{width:100%;height:auto;display:block;border-radius:12px}
+.figura figcaption{font-size:13px;color:#7A7061;margin-top:10px;line-height:1.55}
+.caixa{background:#E8E0D3;border:1px solid rgba(92,83,70,.18);border-radius:12px;padding:28px 30px;margin:40px 0}
+.caixa .selo{display:block;font-family:'Mulish',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7061;margin-bottom:8px}
+.caixa h3{font-family:'Libre Bodoni',serif;font-weight:500;font-size:23px;line-height:1.25;color:#3E3629;margin:0 0 14px}
+.caixa p{color:#5C5346;font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.caixa p:last-child{margin-bottom:0}
 .refs{margin:40px 0 8px}
 .refs h2{font-size:24px}
 .refs ol{padding-left:20px}
@@ -107,6 +115,20 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 @media(max-width:1199px){.hlinks .pl{display:none}}
 @media(max-width:760px){.hwrap{padding:13px 22px}.hpill{display:none}.hbrand .hmk{height:32px}.hbrand .hlg{height:13px}.hbrand .htag{display:none}}
 </style>
+<style id="iluanim">
+.rvl{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease,box-shadow .9s ease}
+.rvl.on{opacity:1;transform:none}
+.caixa.rvl.on{box-shadow:0 18px 44px rgba(62,54,41,.16)}
+.figura.rvl.on svg{box-shadow:0 18px 44px rgba(19,28,36,.35)}
+.figura svg .fioA{stroke-dasharray:1700;stroke-dashoffset:1700}
+.figura.on svg .fioA{animation:iluFio 3.4s ease-out .4s forwards}
+.figura svg .lum{animation:iluLum 6s ease-in-out infinite}
+.figura svg .cint{animation:iluCint 4.6s ease-in-out infinite}
+@keyframes iluFio{to{stroke-dashoffset:0}}
+@keyframes iluLum{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes iluCint{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.figura svg .fioA{stroke-dashoffset:0;animation:none}.figura svg .lum,.figura svg .cint{animation:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="hwrap">
@@ -131,6 +153,8 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
   <p class="lead">When the disorder lives inside the marriage, one nags and the other forgets, and both get hurt. Research explains that cycle, and teaches a way out of it.</p>
   <div class="tagrow"><span class="rtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#566a7a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L12 12 L15.5 14"></path></svg>5 min read</span><span class="tag">ADHD in marriage</span><span class="tag">adult ADHD</span><span class="tag">executive function</span><span class="tag">weekly couple meeting</span><span class="tag">life as a couple</span></div>
   <div class="rule"></div>
+
+  <figure class="figura rvl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="ctT ctD"><title id="ctT">Sala à noite com duas poltronas frente a frente</title><desc id="ctD">Ilustração editorial em tons de marinho e âmbar. Duas poltronas frente a frente, um abajur entre elas e um fio ocre com um nó no meio ligando uma à outra.</desc><defs><linearGradient id="ctceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2833"/><stop offset="0.62" stop-color="#2A3745"/><stop offset="1" stop-color="#22303D"/></linearGradient><radialGradient id="ctlz" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#D9B689" stop-opacity="0.85"/><stop offset="0.55" stop-color="#D9B689" stop-opacity="0.22"/><stop offset="1" stop-color="#D9B689" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="640" fill="url(#ctceu)"/><rect y="470" width="1200" height="170" fill="#131C24"/><rect y="468" width="1200" height="3" fill="#0E161D"/><rect x="80" y="120" width="150" height="210" rx="8" fill="#16202A" stroke="#2E3D4C" stroke-width="2"/><circle class="cint" cx="155" cy="190" r="26" fill="#E8E0D3" opacity="0.85"/><circle cx="165" cy="184" r="26" fill="#1D2833" opacity="0.35"/><ellipse class="lum" cx="600" cy="300" rx="170" ry="122" fill="url(#ctlz)"/><rect x="597" y="318" width="6" height="64" rx="3" fill="#0E161D"/><path d="M574 322 L626 322 L600 286 Z" fill="#3E3629" stroke="#6E7C8A" stroke-width="1.4"/><circle class="cint" cx="600" cy="306" r="5" fill="#E8E0D3"/><path d="M250 470 L250 360 Q250 330 285 330 L360 330 Q380 330 380 360 L380 400 L395 400 L395 470 Z" fill="#0E161D" stroke="#6E7C8A" stroke-width="2"/><rect x="262" y="452" width="14" height="26" fill="#0E161D"/><rect x="368" y="452" width="14" height="26" fill="#0E161D"/><path d="M950 470 L950 360 Q950 330 915 330 L840 330 Q820 330 820 360 L820 400 L805 400 L805 470 Z" fill="#0E161D" stroke="#6E7C8A" stroke-width="2"/><rect x="924" y="452" width="14" height="26" fill="#0E161D"/><rect x="818" y="452" width="14" height="26" fill="#0E161D"/><rect x="560" y="400" width="80" height="8" rx="4" fill="#2E3D4C"/><rect x="594" y="408" width="10" height="62" fill="#2E3D4C"/><path class="fioA" d="M395 420 C 470 420, 500 388, 560 392 C 585 394, 585 418, 604 414 C 623 410, 612 386, 636 390 C 700 400, 740 420, 805 420" fill="none" stroke="#A8845F" stroke-width="2.6" opacity="0.75" stroke-linecap="round"/></svg><figcaption>Two chairs, a knotted thread between them, and the conversation that unties it.</figcaption></figure>
 <p>She came to the appointment to talk about her husband. She brought the list of bills paid late, of postponed promises, of the child’s birthday almost forgotten, and halfway through the list her voice changed. I married a man, doctor, and I became his calendar. The husband, diagnosed with ADHD not long before, listened with his head down, wearing the expression of someone already tired of disappointing. Neither of them was wrong about their own exhaustion, and both were trapped in the same cycle.</p>
 <h2>Science has already measured this wear</h2>
 <p>This cycle is known to science. A 2021 review led by Brian Wymbs and Will Canu, in the United States, sums up a broad body of research showing that adults with ADHD tend to have shorter and more conflictual romantic relationships than adults without the disorder. Well before it, in 2004, Laurel Eakin, Lily Hechtman, and colleagues compared 33 married adults with ADHD to a control group and found worse marital adjustment and more family dysfunction in the couples touched by the disorder, with a detail I always share with my patients, the adults with ADHD themselves saw their marriage and family through more pessimistic eyes than their spouses did. The study’s interviews also showed what the wife in my office knew by heart, spouses taking on silent compensations to cover for their partner’s difficulties.</p>
@@ -148,6 +172,10 @@ header.site.nav-frost{background:rgba(245,246,248,.92);box-shadow:0 1px 0 rgba(4
 </div>
 </article>
 <section class="related">
+
+  <div class="caixa rvl"><span class="selo">What the research shows</span><h3>The marital wear of ADHD has a measure</h3><p>A 2021 review led by Brian Wymbs and Will Canu, in the United States, sums up a broad body of research. Adults with ADHD tend to have shorter and more conflictual romantic relationships than adults without the disorder.</p><p>Well before it, in 2004, Laurel Eakin and Lily Hechtman compared 33 married adults with ADHD to a control group and found worse marital adjustment and more family dysfunction. I always share one detail of that study with my patients, the adults with ADHD themselves saw their marriage and family through more pessimistic eyes than their spouses did.</p></div>
+
+  <div class="caixa rvl"><span class="selo">Numbers that matter</span><h3>The spouse&rsquo;s chair is still empty</h3><p>A 2024 Norwegian review of psychoeducation programs in adult ADHD found a figure that bothers me. Of ten mapped interventions, only two involved the family, and it is precisely the spouse who manages the disorder day to day.</p><p>The weight, however, reaches the whole house. The group led by Klaus Minde, at McGill University, showed in 2003 that marital and family functioning appears impaired regardless of which of the two has the diagnosis, and that the children of these families carry more emotional and behavioral problems.</p></div>
   <h2>Also worth reading</h2>
   <a href="/en/posts/tdah-sem-rotulo-o-que-uma-avaliacao-cuidadosa-muda.html"><span class="cat">Neurodevelopment · Jun 28, 2026</span><span class="t" style="display:block">ADHD without the label: what a careful evaluation changes</span></a><a href="/en/posts/burnout-parental-quando-cuidar-esgota.html"><span class="cat">Mental health · Jul 20, 2026</span><span class="t" style="display:block">Parental burnout is not a lack of love</span></a>
 </section>
@@ -479,5 +507,6 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
 })();
 </script>
 <script>try{OFC.post();}catch(e){}</script>
+<script id="ilujs">(function(){var els=document.querySelectorAll('.rvl');if(!els.length)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<els.length;i++)els[i].classList.add('on');return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.16});for(var j=0;j<els.length;j++)io.observe(els[j]);})();</script>
 </body>
 </html>
