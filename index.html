@@ -804,17 +804,10 @@ body{font-family:'Mulish',sans-serif}
   function postMeter(){
     var slug=location.pathname;
     if(isSub()) return;                 // assinante lê tudo
-    var read=readList();
-    var seen=read.indexOf(slug)>=0;
-    if(seen || read.length===0){        // 1º texto (ou revisita): banner suave
-      pushRead(slug);
-      softBanner();
-    } else {                            // 2º+ texto novo: paywall
-      hardWall();
-    }
+    pushRead(slug);                     // todo texto: banner suave, sem trava
+    softBanner();
   }
   function softBanner(){
-    if(ss(BAN)==='1')return;
     var shown=false;
     function trigger(){
       if(shown)return;
@@ -826,7 +819,7 @@ body{font-family:'Mulish',sans-serif}
       b.innerHTML='<div class="txt"><div class="ofc-eyebrow">'+T.eyebrow+'</div><div class="ofc-name">'+T.name+'</div><p class="ofc-desc">'+T.desc+'</p><form class="ofc-form"><input type="email" placeholder="'+T.ph+'" autocomplete="email"><button type="submit" class="ofc-btn"><span class="dot"></span>'+T.btn+'</button></form><div class="ofc-msg"></div></div><button class="ofc-x" aria-label="Fechar">&times;</button>';
       document.body.appendChild(b);
       requestAnimationFrame(function(){b.classList.add('show');});
-      function close(){ss(BAN,'1');b.classList.remove('show');setTimeout(function(){b.remove();},320);}
+      function close(){b.classList.remove('show');setTimeout(function(){b.remove();},320);}
       b.querySelector('.ofc-x').addEventListener('click',close);
       wireForm(b,function(){setTimeout(close,1500);});
     }
