@@ -58,8 +58,11 @@ header.site .wrap>span{flex-shrink:0}
     .card .art{flex:0 0 210px;background:#FDF9F0;position:relative}
     .card .art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
     .card .bd{flex:1;padding:26px 28px;min-width:0}
-    .tabs{position:sticky;top:var(--hh,72px);z-index:40;background:rgba(245,246,248,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(42,55,69,.1);transition:transform .38s ease,opacity .38s ease}
-    .tabs.recolhido{transform:translateY(-118%);opacity:0;pointer-events:none}
+    .tabs{position:sticky;top:var(--hh,72px);z-index:40;background:rgba(245,246,248,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(42,55,69,.1);will-change:transform;transition:transform .5s cubic-bezier(.22,.61,.36,1),opacity .34s ease,box-shadow .5s ease}
+    .tabs.fixa{box-shadow:0 6px 20px rgba(42,55,69,.07)}
+    .tabs.recolhido{transform:translateY(-100%);opacity:0;pointer-events:none}
+    .tabs a{transition:color .3s ease,background .35s ease,border-color .3s ease,transform .3s ease,opacity .3s ease .04s}
+    .tabs.recolhido a{opacity:0}
     .tabs .tin{max-width:1100px;margin:0 auto;padding:10px 22px;display:flex;gap:9px;overflow-x:auto;scrollbar-width:none}
     .tabs .tin::-webkit-scrollbar{display:none}
     .tabs a{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 16px;border:1px solid rgba(42,55,69,.15);border-radius:999px;font-family:'Mulish',sans-serif;font-size:12.5px;letter-spacing:.02em;color:#4e6c86;text-decoration:none;white-space:nowrap;background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(241,244,247,.9));box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 1px 3px rgba(42,55,69,.08);transition:color .3s ease,background .3s ease,border-color .3s ease,transform .3s ease}
@@ -339,32 +342,50 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
   medir(); window.addEventListener('resize', medir);
   if(!tb) return;
 
-  /* a barra recolhe conforme o cursor se afasta do topo, e volta quando ele sobe */
-  var temHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var recolhido=false, espera;
+  /* ------- recolhimento -------
+     A direção da rolagem manda. O cursor perto do topo, o foco por teclado e o
+     ponteiro sobre a própria barra sempre a trazem de volta. Nos primeiros 240
+     pixels ela nunca some, para não piscar no começo da página. */
+  var LIMIAR=240, recolhido=false, sobreBarra=false, ultimo=window.scrollY, espera;
   function mostrar(){ if(recolhido){ tb.classList.remove('recolhido'); recolhido=false; } }
-  function recolher(){ if(!recolhido && window.scrollY>220){ tb.classList.add('recolhido'); recolhido=true; } }
-  if(temHover){
+  function recolher(){
+    if(sobreBarra || tb.contains(document.activeElement)) return;
+    if(!recolhido && window.scrollY>LIMIAR){ tb.classList.add('recolhido'); recolhido=true; }
+  }
+  tb.addEventListener('mouseenter', function(){ sobreBarra=true; clearTimeout(espera); mostrar(); });
+  tb.addEventListener('mouseleave', function(){ sobreBarra=false; });
+  tb.addEventListener('focusin', mostrar);
+
+  var zonaTopo=false;
+  if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
     document.addEventListener('mousemove', function(e){
-      var zona=(hd?hd.offsetHeight:72)+tb.offsetHeight+110;
-      clearTimeout(espera);
-      if(e.clientY<=zona){ mostrar(); } else { espera=setTimeout(recolher, 520); }
-    }, {passive:true});
-    tb.addEventListener('focusin', mostrar);
-    window.addEventListener('scroll', function(){ if(window.scrollY<=220) mostrar(); }, {passive:true});
-  } else {
-    var ant=window.scrollY;
-    window.addEventListener('scroll', function(){
-      var y=window.scrollY;
-      if(y<ant-6 || y<=220){ mostrar(); } else if(y>ant+6){ recolher(); }
-      ant=y;
+      var limite=(hd?hd.offsetHeight:72)+tb.offsetHeight+120;
+      var dentro=e.clientY<=limite;
+      if(dentro && !zonaTopo){ clearTimeout(espera); mostrar(); }
+      zonaTopo=dentro;
     }, {passive:true});
   }
 
+  var passo=false;
+  function aoRolar(){
+    var y=window.scrollY;
+    tb.classList.toggle('fixa', y>8);
+    if(y<=LIMIAR){ clearTimeout(espera); mostrar(); }
+    else if(y>ultimo+8 && !zonaTopo){ clearTimeout(espera); espera=setTimeout(recolher,120); }
+    else if(y<ultimo-8){ clearTimeout(espera); mostrar(); }
+    ultimo=y;
+    marcar();
+  }
+  window.addEventListener('scroll', function(){
+    if(passo) return; passo=true;
+    requestAnimationFrame(function(){ aoRolar(); passo=false; });
+  }, {passive:true});
+
+  /* ------- realce da categoria em que o leitor está ------- */
   var links=[].slice.call(tb.querySelectorAll('a[href^="#"]'));
-  if(!links.length) return;
   var alvos=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
   function marcar(){
+    if(!links.length) return;
     var lim=(hd?hd.offsetHeight:72)+tb.offsetHeight+46, at=0;
     for(var i=0;i<alvos.length;i++){ if(alvos[i] && alvos[i].getBoundingClientRect().top<=lim) at=i; }
     links.forEach(function(a,i){ if(i===at){a.setAttribute('aria-current','true');} else {a.removeAttribute('aria-current');} });
@@ -375,18 +396,20 @@ h1,article h2,.head h1,.card .t,.related h2,.related .t,.cta h2,.pillars .l,.rol
     }
   }
   marcar();
-  var passo=false;
-  window.addEventListener('scroll', function(){ if(passo) return; passo=true;
-    requestAnimationFrame(function(){ marcar(); passo=false; }); }, {passive:true});
 
-  /* o realce de palavra nos títulos muda a altura depois do carregamento,
-     o que desfaz o salto do link direto para um tema; refazemos o salto. */
+  /* ------- link direto para um tema -------
+     O realce palavra a palavra dos títulos e a troca de fonte mudam a altura
+     depois do carregamento, o que desfaz o salto inicial do navegador. */
   function refazerAncora(){
     if(!location.hash) return;
     var alvo=document.getElementById(location.hash.slice(1));
-    if(alvo) alvo.scrollIntoView();
+    if(alvo){ alvo.scrollIntoView(); ultimo=window.scrollY; mostrar(); }
   }
-  window.addEventListener('load', function(){ medir(); setTimeout(refazerAncora, 60); setTimeout(refazerAncora, 420); });
+  window.addEventListener('load', function(){
+    medir(); refazerAncora();
+    setTimeout(refazerAncora,120); setTimeout(refazerAncora,500);
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ setTimeout(refazerAncora,60); }); }
+  });
 })();
 </script>
 </body>
